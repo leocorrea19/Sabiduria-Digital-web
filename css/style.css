@@ -183,105 +183,76 @@ ul {
 
 /* div padre */
 .seccion-avanzado-principiante {
-    height: 600px;
-    width: 100%;
-    margin: auto;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding-left: 20px;
-    padding-right: 20px;
+    height: auto;
+    width: auto;
+    margin-left: 200px;
+    display: grid;
+    grid-template-columns: 600px 300px 600px;
+
 }
     /* div de la seccion principiantes */
+
     .seccion-principiante {
-        height: 500px;
-        width: 700px;
+        position: relative;
+        display: inline-block;
+        width: 100%; /* Ajusta el ancho del contenedor de la imagen */
 
-        background-image: linear-gradient(#00000050, #00000050), url(image/imag-para-principiante.webp);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
+        /* grid-column-start: 1;
+        grid-column-end: 2; */
     }
 
-    .seccion-principiante:hover {
-        /* border: 10px solid var(--colorNaranja); */
-        box-shadow: 0px 0px 20px 10px var(--colorNaranja)
-    }
-
-
-        .seccion-principiante .titulo-principiante {
-            text-align: center;
-            padding-top: 50px;
-            font-size: 70px;
-            color: #ffffff;
-
-            text-shadow: 
-                -1px -1px 0 #000,  /* Contorno en la esquina superior izquierda */
-                1px -1px 0 #000,   /* Contorno en la esquina superior derecha */
-                -1px 1px 0 #000,   /* Contorno en la esquina inferior izquierda */
-                1px 1px 0 #000;    /* Contorno en la esquina inferior derecha */
-        }
-
-        .seccion-principiante .texto-principiante {
-            padding-top: 60px;
-            padding-left: 10px;
-            padding-right: 10px;
-            text-align: center;
-            font-size: 30px;
-            color: #ffffff;
-
-            text-shadow: 
-                -1px -1px 0 #000,  /* Contorno en la esquina superior izquierda */
-                1px -1px 0 #000,   /* Contorno en la esquina superior derecha */
-                -1px 1px 0 #000,   /* Contorno en la esquina inferior izquierda */
-                1px 1px 0 #000;    /* Contorno en la esquina inferior derecha */
-        }
-    
-    /* div de la seccion avanzado */
     .seccion-avanzado {
-        height: 500px;
-        width: 700px;
+        position: relative;
+        display: inline-block;
+        width: 100%; /* Ajusta el ancho del contenedor de la imagen */
 
-        background-image: linear-gradient(#00000050, #00000050), url(image/image-para-avanzado.webp);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
+        grid-column-start: 3;
+        grid-column-end: 4;
+
     }
 
-    .seccion-avanzado:hover {
+    .seccion-principiante:hover, .seccion-avanzado:hover {
         /* border: 10px solid var(--colorNaranja); */
         box-shadow: 0px 0px 20px 10px var(--colorNaranja)
     }
 
+    .imagen-principiante, .imagen-avanzado {
+        display: block;
+        width: 100%;
+        height: auto; /* Asegura que la imagen sea responsiva */
+    }
 
-        .seccion-avanzado .titulo-avanzado {
-            text-align: center;
-            padding-top: 50px;
-            font-size: 70px;
-            color: #ffffff;
 
-            text-shadow: 
+    .div-titulo-texto-principiante, .div-titulo-texto-avanzado {
+        position: absolute;
+        top: 50%; /* Ajusta esta posición según sea necesario */
+        left: 50%;
+        transform: translate(-50%, -50%); /* Centra el texto sobre la imagen */
+        text-align: center;
+        color: white;
+        width: 80%; /* Ajusta el ancho del texto */
+        /* background: rgba(0, 0, 0, 0.5); */ /* Fondo semitransparente para que el texto sea legible */
+        padding: 10px;
+        border-radius: 10px; /* Bordes redondeados */
+        box-sizing: border-box;
+
+        text-shadow:
                 -1px -1px 0 #000,  /* Contorno en la esquina superior izquierda */
                 1px -1px 0 #000,   /* Contorno en la esquina superior derecha */
                 -1px 1px 0 #000,   /* Contorno en la esquina inferior izquierda */
                 1px 1px 0 #000;    /* Contorno en la esquina inferior derecha */
-        }
+    }
 
-        .seccion-avanzado .texto-avanzado {
-            padding-top: 60px;
-            padding-left: 10px;
-            padding-right: 10px;
-            text-align: center;
-            font-size: 30px;
-            color: #ffffff;
+    .titulo-principiante, .titulo-avanzado {
+        margin: 0;
+        font-size: 4em;
+        border-bottom: 2px solid white;
+    }
 
-            text-shadow: 
-                -1px -1px 0 #000,  /* Contorno en la esquina superior izquierda */
-                1px -1px 0 #000,   /* Contorno en la esquina superior derecha */
-                -1px 1px 0 #000,   /* Contorno en la esquina inferior izquierda */
-                1px 1px 0 #000;    /* Contorno en la esquina inferior derecha */
-        }
-
+    .texto-principiante, .texto-avanzado {
+        margin-top: 10px;
+        font-size: 2em;
+    }
 
 /* FOOTER */
 .footer-info {
