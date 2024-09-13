@@ -118,10 +118,15 @@ ul {
 
 .contenido-info-de-nosotros {
     background-color: #8889ae;
-    background-image: linear-gradient(#00000050, #00000050), url(image/imag-para-info-sobre-nosotros.webp);
+    background-image: linear-gradient(#00000050, #00000050);
     background-repeat: no-repeat;
     background-position: right;
     background-size: contain;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 70px repeat(1, 1fr);
+
 
     /* overflow: scroll; */
 
@@ -129,26 +134,26 @@ ul {
     height: 500px;
     margin: auto;
     /* text-align: center; */
-    padding: 20px;
     box-shadow: inset 0px 0px 20px 10px rgba(0,0,0, .5);
 }
 
 .titulo-sobre-nosotros{
-    width: 50%;
+    /* width: 50%; */
     height: auto;
     text-align: center;
-    font-size: 60px;
+    font-size: 4em;
     color: var(--colorBody);
+    border-bottom: 1px solid var(--colorBody);
+
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
 
     text-shadow: 
         -1px -1px 0 #000,  /* Contorno en la esquina superior izquierda */
         1px -1px 0 #000,   /* Contorno en la esquina superior derecha */
         -1px 1px 0 #000,   /* Contorno en la esquina inferior izquierda */
         1px 1px 0 #000;    /* Contorno en la esquina inferior derecha */
-}
-
-.linea-sobre-nosotros {
-    width: 50%;
 }
 
 .texto-sobre-nosotros {
@@ -156,14 +161,26 @@ ul {
     height: auto;
     text-align: center;
     padding-top: 20px;
-    font-size: 25px;
+    font-size: 2em;
     color: var(--colorBody);
+
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
 
     text-shadow: 
         -1px -1px 0 #000,  /* Contorno en la esquina superior izquierda */
         1px -1px 0 #000,   /* Contorno en la esquina superior derecha */
         -1px 1px 0 #000,   /* Contorno en la esquina inferior izquierda */
         1px 1px 0 #000;    /* Contorno en la esquina inferior derecha */
+}
+
+.image-sobre-nosotros {
+    grid-column-start: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+
+    height: 100%;
 }
 
 /* estilo PRINCIPIANTE / AVANZADO */
