@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 
-:root { /* Es más especifico que html -> Especificidad  */
-    --colorPincipal: #004988; /* variables css */
-    --colorBackground: #212F56;
+:root {
+    --colorPincipal: #004369; /* variables css */
+    --colorBackground: #ace1f5;
     --colorBody: #ddf6ff;
-    --colorNaranja: #FF6B35;
+    --colorBotones: #f0a73a;
+    --colorPalabras: #1f628e;
 }
 
 * {
@@ -13,6 +14,7 @@
     margin: 0;
     box-sizing: border-box;
     /* border: .5px solid red; */
+    scroll-behavior: smooth;
 }
 
 body {
@@ -29,371 +31,363 @@ ul {
     list-style: none;
 }
 
-/* estilo del header */
-* {
-    padding: 0;
+/* ! ------------------------------------------ */
+
+/* Define la fuente utilizando @font-face */
+@font-face {
+    font-family: 'ITC Franklin Gothic LT';
+    src:    url('fonts/ITCFranklinGothicLT.woff2') format('woff2'),
+            url('fonts/ITCFranklinGothicLT.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Aplica la fuente a todo el documento */
+body {
+    font-family: 'ITC Franklin Gothic LT', sans-serif;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    background-color: #ddf6ff; /* Fondo general de la página */
+    color: #1f628e;
 }
 
-.header-nav .nav-header {
-    padding: 0 5%;
-    height: 100px;
-    background-color: #004988;
+header {
+    background-color: var(--colorPincipal); /* Color de fondo del nav */
+    padding: 10px 20px; /* Reduce el padding para hacer el nav más delgado */
+    position: relative;
+    z-index: 1;
+    height: 90px; /* Ajusta la altura para que el nav no se vea tan ancho */
+}
+
+.navbar {
     display: flex;
-    align-items: center;
+    align-items: flex-end; /* Alinea el contenido al final del header */
     justify-content: space-between;
-}
-
-    /* Logo y nombre */
-    .nav-header .div-logo-nombre {
-        width: 30%;
-        height: 100%;
-    }
-
-    .nav-header .div-logo-nombre .logo-nombre-a {
-        /* float: left; */
-        width: auto;
-        height: auto;
-        display: flex;
-        align-items: center;
-        /* overflow: hidden; */
-    }
-
-    .nav-header .div-logo-nombre .logo-nombre-a .img-logo {
-        width: 90px;
-        /* padding-right: 2%;*/
-        padding-top: 5px; 
-        
-    }
-
-    .nav-header .div-logo-nombre .logo-nombre-a .titulo-nombre {
-        font-size: 35px;
-        color: var(--colorBody);
-        text-transform: uppercase;
-        display: inline;
-        padding-left: 20px;
-
-        text-shadow: 
-            -1px -1px 0 #000,  /* Contorno en la esquina superior izquierda */
-            1px -1px 0 #000,   /* Contorno en la esquina superior derecha */
-            -1px 1px 0 #000,   /* Contorno en la esquina inferior izquierda */
-            1px 1px 0 #000;    /* Contorno en la esquina inferior derecha */
-    }
-
-    /* Lista de navegacion */
-    .div-lista-items {
-        width: auto;
-        height: auto;
-    }
-
-    .nav-header .lista-nav {
-        width: auto;
-        height: auto;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-    }
-
-    .nav-header .lista-nav .items {
-        display: block;
-        text-transform: uppercase;
-        padding: 15px;
-        font-size: 24px;
-        font-weight: bold;
-        color: var(--colorBody);
-
-        text-shadow: 
-            -1px -1px 0 #000,  /* Contorno en la esquina superior izquierda */
-            1px -1px 0 #000,   /* Contorno en la esquina superior derecha */
-            -1px 1px 0 #000,   /* Contorno en la esquina inferior izquierda */
-            1px 1px 0 #000;    /* Contorno en la esquina inferior derecha */
-    }
-
-    .nav-header .lista-nav .items:hover {
-        border-bottom: 4px solid var(--colorNaranja);
-    }
-
-/* estilo  sobre nosotros*/
-
-.contenido-info-de-nosotros {
-    background-color: #8889ae;
-    background-image: linear-gradient(#00000050, #00000050);
-
-    display: flex;
-
-    /* overflow: scroll; */
-
-    width: 100%;
-    height: 500px;
-    margin: auto;
-    box-shadow: inset 0px 0px 20px 10px rgba(0,0,0, .5);
-}
-
-.div-titulo-y-texto {
-    display: flex;
-    flex-direction: column;
-    
-}
-
-.titulo-sobre-nosotros{
-    width: auto;
-    height: auto;
-    padding-top: 20px;
-    text-align: center;
-    font-size: 4em;
-    color: var(--colorBody);
-    border-bottom: 1px solid var(--colorBody);
-
-    text-shadow: 
-        -1px -1px 0 #000,  /* Contorno en la esquina superior izquierda */
-        1px -1px 0 #000,   /* Contorno en la esquina superior derecha */
-        -1px 1px 0 #000,   /* Contorno en la esquina inferior izquierda */
-        1px 1px 0 #000;    /* Contorno en la esquina inferior derecha */
-}
-
-.texto-sobre-nosotros {
-    width: auto;
-    height: auto;
-    text-align: center;
-    padding-top: 20px;
-    padding-left: 10px;
-    font-size: 2em;
-    color: var(--colorBody);
-
-    text-shadow: 
-        -1px -1px 0 #000,  /* Contorno en la esquina superior izquierda */
-        1px -1px 0 #000,   /* Contorno en la esquina superior derecha */
-        -1px 1px 0 #000,   /* Contorno en la esquina inferior izquierda */
-        1px 1px 0 #000;    /* Contorno en la esquina inferior derecha */
-}
-
-.image-sobre-nosotros {
     height: 100%;
+    position: relative;
 }
 
-/* estilo PRINCIPIANTE / AVANZADO */
+.navbar .logo {
+    display: flex;
+    align-items: end;
+    position: relative;
+    z-index: 10; /* Asegura que el logo esté por encima del nav */
+    color: white;
+    text-decoration: none;
 
-.titulo-para-avanzado-principiante {
-    margin: 50px;
-    padding-top: 50px;
-    font-size: 80px;
+}
+
+.navbar .logo img {
+    height: 140px; /* Tamaño del logo */
+    margin-right: 10px;
+    position: relative;
+    top: 70px; /* Hace que el logo sobresalga del nav */
+    transition: 0.25s;
+}
+
+.navbar .logo span {
+    font-size: 30px; /* Ajusta el tamaño del texto */
+    color: #ddf6ff;
+    font-weight: 800; /* Aplica negrita al texto */
+    padding-top: 130px;
+    transition: 0.25s;
+}
+
+.navbar nav a {
+    display: inline-block; /* Hace que el enlace se comporte como un bloque en línea */
+    color: #ddf6ff; /* Color del texto del botón */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    border-radius: 10px;
+    text-decoration: none; /* Quita el subrayado de los enlaces */
+    margin: 0 10px; /* Espacio entre los botones */
+    font-size: 1.2em; /* Tamaño de las letras */
+    font-weight: bold; /* Aplica negrita al texto del botón */
+    text-align: center; /* Centra el texto dentro del botón */
+    transition: 1s;  /* Transición suave para el color de fondo */
+}
+
+.navbar .login{
+    display: inline-block;
+    background-color: #1f628e;
+    border-radius: 10px ;
+    color: #ddf6ff;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
     text-align: center;
-    color: #004988;
+    transition: 1s;  /* Transición suave para el color de fondo */
 }
 
-/* div padre */
-.seccion-avanzado-principiante {
-    height: auto;
-    width: auto;
-    margin-left: 200px;
-    display: grid;
-    grid-template-columns: 600px 300px 600px;
-
+.navbar nav a:hover {
+    box-shadow: inset 0 -3rem 0 0 var(--colorBotones); /* Color de fondo al pasar el ratón sobre el botón, se rellena de abajo para arriba */
+    color: black; /* se cambia el color de la letra a negro para que sea mas legible */
 }
-    /* div de la seccion principiantes */
 
-    .seccion-principiante {
-        position: relative;
-        display: inline-block;
-        width: 100%; /* Ajusta el ancho del contenedor de la imagen */
+/*  ! MAIN */
 
-        /* grid-column-start: 1;
-        grid-column-end: 2; */
+/* SECCION SOBRE NOSOTROS */
+.hero-section {
+    background: #ddf6ff;
+    color: #1f628e;
+    display: flex;
+    align-items:center;
+    padding: 100px;
+}
+
+.hero-section h1 {
+    font-size: 2em;
+    align-items: center;
+    font-size: 400px;
+}
+
+.hero-section img {
+    height: 500px;
+    border-radius: 20px;
+    margin-right: 20px;
+}
+
+.about-us-container {
+    background-color: #ace1f5; /* Color de fondo del div */
+    border-radius: 15px; /* Bordes redondeados */
+    padding: 50px;
+    max-width:fit-content; /* Limita el ancho máximo del div */
+}
+
+.about-us-container .titulo-sobre-nosotros {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.about-us-container .titulo-sobre-nosotros h1 {
+    font-family: 'ITC Franklin Gothic LT', sans-serif;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    text-align: center;
+    color: #1f628e; /* Mismo color que el texto del nav */
+    font-size: 4em; /* Mismo tamaño de fuente que el texto del nav */
+    font-weight: 1000; /* Mismo peso de fuente que el texto del nav */
+    margin: 0; /* Elimina márgenes si es necesario */
+     /* Ajusta el padding según sea necesario */
+    text-shadow: 0 2px 0 var(--colorBotones); /* Aplica un efecto de sombra para simular una línea en la parte superior de cada letra */
+}
+
+.about-us-container .titulo-sobre-nosotros i {
+    width: 80px;
+    height: 80px;
+    align-content: center;
+    color: var(--colorBotones);
+}
+
+.about-us-text {
+    margin-top: 30px; /* Espacio entre el texto y el título */
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.3em;
+    font-stretch:expanded;
+    /* text-shadow: 0 1px 0 #000000; */ /* Aplica un efecto de sombra para simular una línea en la parte superior de cada letra */
+}
+
+.about-us-container hr {
+    border: none;
+    height: 2px; /* Ajusta la altura del hr según tus necesidades */
+    background-color: #0043692f; /* Color del hr */
+    margin: 20px 0; /* Espaciado superior e inferior del hr */
+}
+
+.separacion-sobre-nosotros-cursos {
+    margin: 0 5% 0 5%;
+}
+
+/* SECCION NIVEL DE FOMRACION */
+.courses-section {
+    text-align: center;
+    padding: 100px;
+    padding-bottom: 200px;
+    background-color:#ddf6ff;
+}
+
+.courses-section h2{
+    font-weight: 800;
+    font-size: 3em;
+}
+
+.level {
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+    margin-top: 100px;
+}
+
+
+.card {
+    display: flex;
+    flex-direction: column; /* Alinea los elementos verticalmente */
+    justify-content: space-evenly;
+    align-items: center; /* Centra el contenido horizontalmente */
+    background-color: #ace1f5;
+    padding: 20px;
+    border-radius: 20px;
+    width: 400px;
+    height: 450px;
+    box-sizing: border-box; /* Incluye padding en el cálculo del ancho y alto */
+
+    transition: 1s;
+    /* border: 10px inset rgba(33,119,199,0.75); */
+    /* border: 10px double rgba(33,119,199,0.75); */
+    
+    /* border-radius: 150px 0px 150px 0px;
+    -webkit-border-radius: 150px 0px 150px 0px;
+    -moz-border-radius: 150px 0px 150px 0px; */
+}
+
+    .card:hover {
+        box-shadow: -17px 14px 45px -10px rgba(0, 0, 0, 0.69);
+        -webkit-box-shadow: -17px 14px 45px -10px rgba(0, 0, 0, 0.69);
+        -moz-box-shadow: -17px 14px 45px -10px rgba(0, 0, 0, 0.69);
+        /* width: 410px;
+        height: 460px; */
+        transform: translateY(-5%);
     }
 
-    .seccion-avanzado {
-        position: relative;
-        display: inline-block;
-        width: 100%; /* Ajusta el ancho del contenedor de la imagen */
-
-        grid-column-start: 3;
-        grid-column-end: 4;
-
-    }
-
-    .seccion-principiante:hover, .seccion-avanzado:hover {
-        /* border: 10px solid var(--colorNaranja); */
-        box-shadow: 0px 0px 20px 10px var(--colorNaranja)
-    }
-
-    .imagen-principiante, .imagen-avanzado {
-        display: block;
-        width: 100%;
-        height: auto; /* Asegura que la imagen sea responsiva */
-    }
-
-
-    .div-titulo-texto-principiante, .div-titulo-texto-avanzado {
-        position: absolute;
-        top: 50%; /* Ajusta esta posición según sea necesario */
-        left: 50%;
-        transform: translate(-50%, -50%); /* Centra el texto sobre la imagen */
-        text-align: center;
-        color: white;
-        width: 80%; /* Ajusta el ancho del texto */
-        /* background: rgba(0, 0, 0, 0.5); */ /* Fondo semitransparente para que el texto sea legible */
-        padding: 10px;
-        border-radius: 10px; /* Bordes redondeados */
-        box-sizing: border-box;
-
-        text-shadow:
-                -1px -1px 0 #000,  /* Contorno en la esquina superior izquierda */
-                1px -1px 0 #000,   /* Contorno en la esquina superior derecha */
-                -1px 1px 0 #000,   /* Contorno en la esquina inferior izquierda */
-                1px 1px 0 #000;    /* Contorno en la esquina inferior derecha */
-    }
-
-    .titulo-principiante, .titulo-avanzado {
-        margin: 0;
-        font-size: 4em;
-        border-bottom: 2px solid white;
-    }
-
-    .texto-principiante, .texto-avanzado {
-        margin-top: 10px;
+    .card h3{
         font-size: 2em;
+        text-shadow: 0 2px 0 var(--colorBotones);
+        font-weight: 1000;
+        border-bottom: 4px solid #1f628e;
+        width: 80%;
     }
 
-/* FOOTER */
-.footer-info {
-    margin-top: 5%;
-    background-color: var(--colorPincipal);
-    width: 100
+    .card p {
+        font-size: 1.2em;
+        text-align: center;
+    }
+
+    .card .btn {
+        background-color: #73a1bfac;
+        color: #e3f7ff;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        box-shadow: 0.3rem 0.3rem 0 0 #1f628e,
+                    inset 0.3rem 0.3rem 0 0 #1f628e;
+        transition: 0.5s;
+        /* border: 2px solid #1f628e; */
+        border: 2px solid #73a1bfac;
+        /* border: 2px solid; */
+    }
+
+    .card .btn:hover {
+        box-shadow: 0 0 0 0 var(--colorBotones),
+                    inset 6rem 4.5rem 0 0 var(--colorBotones);
+        color: #000;
+        /* border-color: black; */
+        border: 2px solid black;
+    }
+
+/* * PREGUNTAR */
+/* * ------------------------------- */
+.about-section {
+    background-color: #f0f4f8;
+    padding: 50px 20px;
+    text-align: center;
 }
 
-    .footer-info .footer-info-div-padre {
-        height: 200px;
-        display: grid;
-        padding: 10px;
+.donations-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #1f628e;
+}
+/* * ------------------------------- */
 
-        color: #fff;
-        text-shadow: 
-                    -1px -1px 0 #000,  /* Contorno en la esquina superior izquierda */
-                    1px -1px 0 #000,   /* Contorno en la esquina superior derecha */
-                    -1px 1px 0 #000,   /* Contorno en la esquina inferior izquierda */
-                    1px 1px 0 #000;    /* Contorno en la esquina inferior derecha */
+/* ! FOOTER */
+footer {
+    background-color: #003a56;
+    padding: 20px 0;
+    color: #f0f4f8;
+}
 
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: 1fr repeat(2, .5fr);
-    }
-        /* NOMBRE Y LOGO EN EL FOOTER */
-        .footer-info .footer-info-div-padre .footer-info-nombre-logo {
-            grid-row-start: 1;
-            grid-row-end: 4;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-            /* LOGO */
-            .footer-info .footer-info-div-padre .footer-info-nombre-logo .footer-img-logo {
-                width: 100px;
-                padding-top: auto;
-            }
-            /* NOMBRE */
-            .footer-info .footer-info-div-padre .footer-info-nombre-logo .footer-titulo-nombre {
-                padding-top: 2%;
-                font-size: 25px;
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1300px;
+    margin: 0 auto;
+}
 
-            }
-        
-        /* EQUIPO DE TRABAJO */
-        .footer-info .footer-info-div-padre .fotter-info-equipo {
-            grid-row-start: 1;
-            grid-row-end: 3;
-        }
+.footer-container h2, .footer-container h3 {
+    margin-bottom: 15px;
+}
 
-            .footer-info .footer-info-div-padre .fotter-info-equipo .titulo-equipo {
-                font-size: 20px;
-            }
+.logof img {
+    width: 120px;
 
-            .footer-info .footer-info-div-padre .fotter-info-equipo .lista-info-equipo {
-                font-size: 18px;
+}
+.footername h2 {
+    text-align: center;
+    width: auto;
+    padding-right: 45%;
+    font-size: 1.5em; /* Ajusta el tamaño del texto */
+    color: #ddf6ff;
+    font-weight: 800; /* Aplica negrita al texto */
+}
 
-                padding: 5px;
-                padding-left: 20px;
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-end;
-                align-items: flex-start;
-            }
+.team ul {
+    list-style: none;
+    padding-left: 15px;
+}
 
-                .footer-info .footer-info-div-padre .fotter-info-equipo .lista-info-equipo .item-equipo {
-                    list-style: inside;
-                }
+.team ul li {
+    margin: 5px 0;
+    padding: 2px;
+}
 
-                .footer-info .footer-info-div-padre .fotter-info-equipo .lista-info-equipo .item-equipo:hover {
-                    list-style: inside;
-                    color: var(--colorNaranja);
-                }
+.team ul li a {
+    color: white;
+    text-decoration: none;
+}
 
-                    .footer-info .footer-info-div-padre .fotter-info-equipo .lista-info-equipo .item-equipo .linkedin-equipo {
-                        color: #fff;
-                    }
+.team ul li a:hover {
+    border-bottom: 2px solid var(--colorBotones);
+}
 
-                    .footer-info .footer-info-div-padre .fotter-info-equipo .lista-info-equipo .item-equipo .linkedin-equipo:hover {
-                        color: var(--colorNaranja);
-                    }
-        
-        /* REDES SOSICALES */
-        .footer-info .footer-info-div-padre .footer-info-redes-sociales {
-            grid-row-start: 1;
-            grid-row-end: 2;
-            font-size: 20px;
-        }
+.social a {
+    color: white;
+    font-size: 30px;
+    margin-right: 10px;
+    text-decoration: none;
+}
 
-            .footer-info .footer-info-div-padre .footer-info-redes-sociales .lista-redes-sociales {
-                display: flex;
-                justify-content: start;
-            }
-            
-                .footer-info .footer-info-div-padre .footer-info-redes-sociales .lista-redes-sociales .imagenes-redes {
-                    width: 50px;
-                    margin: 5px;
-                }
-                
-                .footer-info .footer-info-div-padre .footer-info-redes-sociales .lista-redes-sociales .imagenes-redes:hover {
-                    background-color: var(--colorNaranja);
-                    border-radius: 15px;
-                }
+.social a:hover {
+    color: var(--colorBotones);
+}
 
-        /* AYUDAS */
-        .footer-info .footer-info-div-padre .footer-info-donaciones-subs {
-            grid-row-start: 1;
-            grid-row-end: 2;
-        }
-            /* TITULO */
-            .footer-info .footer-info-div-padre .footer-info-donaciones-subs .titulo-donaciones-subs {
-                font-size: 20px;
-            }
-            
-            /* LISTA = DONACIONES / SUBS */
-            .footer-info .footer-info-div-padre .footer-info-donaciones-subs .lista-donaciones-subs {
-                font-size: 20px;
-                margin: 20px;
-                display: flex;
-                justify-content: space-evenly;
-            }
-                
-                .footer-info .footer-info-div-padre .footer-info-donaciones-subs .lista-donaciones-subs .ayuda-items {
-                    color: #fff;
-                }
+.help .btn {
+    display: inline-block;
+    background-color: var(--colorPalabras);
+    color: #f0f4f8;
+    padding: 10px 20px;
+    margin: 10px 0;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: .5s;
+}
 
-                .footer-info .footer-info-div-padre .footer-info-donaciones-subs .lista-donaciones-subs .ayuda-items:hover {
-                    color: var(--colorNaranja);
-                }
+.help .btn:hover {
+    box-shadow: inset 3rem 0 3rem 0 var(--colorBotones);
+}
 
-        /* DERECHOS RESERVADOS */
-        .footer-info .footer-info-div-padre .div-footer-info-derechos-reservados {
-            grid-column-start: 2;
-            grid-column-end: 4;
-            grid-row-start: 3;
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
 
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-
-            font-size: 20px;
-        }
-
+.footer-bottom p {
+    color: var(--colorBotones);
+    font-size: 1em;
+}
