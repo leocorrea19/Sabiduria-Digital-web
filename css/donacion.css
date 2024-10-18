@@ -1,0 +1,85 @@
+/* Estilos para la sección de donaciones y suscripciones */
+
+h1 {
+    color: #FF6B35;
+    text-align: center;
+    padding: 15px 0; /*espacio arriba y abajo del contenedor*/
+    text-shadow: 2px 2px 5px rgba(184, 61, 61, 0.3); /* Sombra del texto */
+}
+
+.tarjetas-container {
+    display: flex; /*para alinear las tarjetas en filas*/
+    justify-content: center; /*centrar las tarjetas en el contenedor*/
+    align-items: flex-start; /*alínea las tajetas en la parte superior*/
+    gap: 150px; /*espacio entre las tarjetas*/
+    padding: 40px 0; /*espacio arriba y abajo del contenedor*/
+}
+
+.tarjeta {
+    background-color: #EFEFD0; /* Color claro de la paleta */
+    border: 2px solid #004E89; /* Color azul oscuro de la paleta */
+    border-radius: 10px;
+    padding: 20px;
+    width: 500px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+.tarjeta:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.tarjeta h3 {
+    color: #1A659E; /* Azul medio de la paleta */
+    margin-bottom: 10px;
+}
+
+.tarjeta p {
+    color: #212F56; /* Color de texto para mayor contraste */
+}
+
+/* Estilos para el formulario de pago */
+.formulario-pago {
+    display: none; /* Oculto por defecto */
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 400px;
+    margin: 20px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.formulario-pago h3 {
+    color: #004E89; /* Azul oscuro de la paleta */
+    margin-bottom: 15px;
+}
+
+.formulario-pago input,
+.formulario-pago select,
+.formulario-pago button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.formulario-pago button {
+    background-color: #FF6B35; /* Naranja de la paleta */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.formulario-pago button:hover {
+    background-color: #FF8A65; /* Naranja más claro */
+    transform: scale(1.05);
+}

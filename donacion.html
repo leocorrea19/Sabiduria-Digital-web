@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suscripciones y donaciones.</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Enlace a la hoja de estilos CSS -->
+    <link rel="stylesheet" href="donacion.css">
+</head>
+<body>
+
+    <!-- Barra de navegacion -->
+    <header class="header-nav">
+
+      <nav class="nav-header">
+
+        <div class="div-logo-nombre">
+
+          <a href="index.html" class="logo-nombre-a">
+
+            <img src="image/logo.webp" alt="Logo Sabiduría digital" class="img-logo">
+
+            <h1 class="titulo-nombre">Sabiduría Digital</h1>
+
+          </a>
+        </div>
+        
+        <div class="div-lista-items">
+
+          <ul class="lista-nav">
+            <li>
+              <a href="index.html" class="items item-inicio">
+                Inicio
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="items item-foro">
+                Foro
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="items item-iniciar-sesion">
+                Iniciar Sesión
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="items item-registrate">
+                Registrate
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </nav>
+    </header>
+
+<!--SECCIÓN DONACIONES Y SUSCRIPCIONES-->
+    <main>
+        <h1>Suscripciones y Donaciones.</h1> <br>
+
+        <div class="tarjetas-container">
+
+            <!-- Tarjeta suscribirse-->
+            <div class="tarjeta" id="tarjeta-suscribirse">
+                <h2>Suscribirme al Newsletter.</h2> <br>
+                <p>Si querés enterarte de las novedades de Sabiduría Digital, suscribite a nuestro newsletter donde encontrarás:</p> <br>    
+                <ul>
+                    <li>> Los cursos y carreras nuevas que se vayan agregando al sitio cada mes.</li>
+                    <li>> Descuentos exclusivos de Sabiduría Digital para acceder a cursos pagos.</li>
+                    <li>> Noticias relevantes sobre tecnología</li>
+                    <li>> ¡Y más!</li>
+                </ul>
+            </div>
+
+            <!-- Tarjeta Donación-->
+            <div class="tarjeta" id="tarjeta-donacion"> 
+                <h2>¡Quiero donar!</h2><br>
+                <p>Tu colaboración nos ayuda a continuar con este proyecto y seguir acompañando a muchos estudiantes a continuar sus trayectorias en tecnología.</p>
+            </div>
+        </div>
+
+        <div class="formulario-pago" id="formulario-pago">
+            <h2>Formulario de Pago</h2>
+            <form id="form-pago">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="metodo-pago">Método de Pago:</label>
+                <select id="metodo-pago" name="metodo-pago" required>
+                    <option value="debito">Tarjeta de Débito</option>
+                    <option value="transferencia">Transferencia Bancaria</option>
+                </select>
+
+                <button type="submit">Pagar</button>
+            </form>
+        </div>
+    </main>
+
+
+<!-- FOOTER -->
+    <footer class="footer-info">
+        <div class="footer-info-div-padre">
+  
+          <!-- NOMBRE Y LOGO -->
+          <div class="footer-info-nombre-logo">
+              <img src="image/logo.webp" alt="Logo Sabiduría digital" class="footer-img-logo">
+  
+              <h3 class="footer-titulo-nombre">Sabiduría Digital</h3>
+          </div>
+  
+          <!-- EQUIPO DE TRABAJO -->
+          <div class="fotter-info-equipo">
+            <h3 class="titulo-equipo">
+              Equipo de trabajo:
+            </h3>
+            <ul class="lista-info-equipo">
+  
+              <li class="item-equipo">
+                <a href="https://www.linkedin.com/in/iara-aylen-sosa/" target="_blank" class="linkedin-equipo">
+                  Sosa Iara
+                </a>
+              </li>
+  
+              <li class="item-equipo">
+                <a href="https://www.linkedin.com/in/melany-guzm%C3%A1n2217/" target="_blank" class="linkedin-equipo">
+                  Guzman Melany
+                </a>
+              </li>
+  
+              <li class="item-equipo">
+                <a href="https://www.linkedin.com/in/camila-alfonso-001435225/" target="_blank" class="linkedin-equipo">
+                  Alfonso Camila
+                </a>
+              </li>
+  
+              <li class="item-equipo">
+                <a href="https://www.linkedin.com/in/fabiolaricardo/" target="_blank" class="linkedin-equipo">
+                  Ricardo Fabiola
+                </a>
+              </li>
+  
+              <li class="item-equipo">
+                <a href="https://www.linkedin.com/in/leonel-javier-correa/" target="_blank" class="linkedin-equipo">
+                  Correa Leonel
+                </a>
+              </li>
+  
+            </ul>
+          </div>
+  
+          <!-- REDES SOCIALES -->
+          <div class="footer-info-redes-sociales">
+            
+            <h3 class="titulo-redes-sociales">
+              Redes sociales
+            </h3>
+  
+            <ul class="lista-redes-sociales">
+              <li>
+                <a href="https://www.instagram.com/" target="_blank" class="red-social-instagram">
+                  <img src="image/logo-instagram.webp" alt="Logo Instagram" class="imagenes-redes">
+                </a>
+              </li>
+  
+              <li>
+                <a href="https://www.x.com/" target="_blank" class="red-social-x">
+                  <img src="image/logo-x.webp" alt="Logo X" class="imagenes-redes">
+                </a>
+              </li>
+  
+              <li>
+                <a href="https://www.linkedin.com/" target="_blank" class="red-social-linkedin">
+                  <img src="image/logo-linkedin.webp" alt="Logo LinkedIn" class="imagenes-redes">
+                </a>
+              </li>
+  
+              <li>
+                <a href="https://www.tiktok.com/" target="_blank" class="red-social-tiktok">
+                  <img src="image/logo-tiktok.webp" alt="Logo TikTok" class="imagenes-redes">
+                </a>
+              </li>
+  
+              <li>
+                <a href="https://www.discord.com/" target="_blank" class="red-social-discord">
+                  <img src="image/logo-discord.webp" alt="Logo Discord" class="imagenes-redes">
+                </a>
+              </li>
+            </ul>
+  
+          </div>
+          
+          <!-- DONACIONES / SUBS -->
+          <div class="footer-info-donaciones-subs">
+  
+            <h3 class="titulo-donaciones-subs">
+              ¡Tu ayuda importa!
+            </h3>
+  
+            <ul class="lista-donaciones-subs">
+  
+              <li>
+                <a href="#" class="ayuda-items">Donaciones</a>
+              </li>
+  
+              <li>
+                <a href="#" class="ayuda-items">Subscribite</a>
+              </li>
+  
+            </ul>
+          </div>
+  
+          <div class="div-footer-info-derechos-reservados">
+            <h3 class="titulo-derechos reservados">
+              © 2024 Sabiduría Digital, todos los derechos reservados.
+            </h3>
+          </div>
+  
+        </div>
+      </footer>
+    <script src="donacion.js"></script>
+
+
+</body>
+
+</body>
+</html>
