@@ -3,7 +3,9 @@
 h1 {
     color: #FF6B35;
     text-align: center;
+    text-decoration: inherit;
     padding: 15px 0; /*espacio arriba y abajo del contenedor*/
+    margin-top: 20px;
     text-shadow: 2px 2px 5px rgba(184, 61, 61, 0.3); /* Sombra del texto */
 }
 
@@ -13,6 +15,7 @@ h1 {
     align-items: flex-start; /*alínea las tajetas en la parte superior*/
     gap: 150px; /*espacio entre las tarjetas*/
     padding: 40px 0; /*espacio arriba y abajo del contenedor*/
+    margin-bottom: 7.5em;
 }
 
 .tarjeta {
