@@ -1,9 +1,3 @@
-import '../css/style.css'
-import '../css/avanzado.css'
-import '../css/foro.css'
-import '../css/donacion.css'
-import '../css/principiantes.css'
-
 import * as infoIngenieria from '../javascript/info-ingenierias.js'
 import * as infoLicenciatura from '../javascript/info-licenciaturas.js'
 import * as infoTecnicatura from '../javascript/info-tecnicatura.js'
