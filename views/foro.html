@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Foro</title>
+
+    <link rel="stylesheet" href="/css/foro.css">
+
+    <link rel="icon" type="image/webp" href="/image/logo-para-ventana.webp">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <!-- Barra de navegacion -->
+    <header>
+        <div class="navbar">
+            <a href="/index.html" class="logo">
+                <img src="/image/logo-circular.webp" alt="Logo de Sabiduría Digital">
+                <span>Sabiduría Digital</span>
+            </a>
+            <nav>
+                <!-- <a href="/index.html">Inicio</a> -->
+                <a href="index.html">Inicio</a>
+                <a href="foro.html">Foro</a>
+                <a href="#" id="loginBtn" class="login">Iniciar Sesión</a>
+                <a href="#" id="registerBtn" class="login">Registrarse</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-foro">
+
+        <section class="opiniones">
+            <h2 class="titulo-opiniones">¡Conocé las opiniones de nuestra comunidad!</h2>
+
+            <!-- Tarjeta de opinión 1 -->
+            <div class="opinion-tarjeta">
+                <img src="image/usuario1.jpg" alt="Foto del usuario">
+                <div class="opinion-contenido">
+                    <h3>Julieta J.</h3>
+                    <p>Ejemplo de opinión del usuario. Esta página me sirvió mucho para entender mis opciones de carrera
+                        y ahora empecé una tecnicatura en programación, luego de hacer un curso introductorio y gratuito
+                        que me recomendaron acá.
+                    </p>
+                    <a href="https://linkedin.com/in/usuario1" target="_blank">Ver usuario en LinkedIn.</a><br>
+                    <span class="fecha">Fecha: 23 de Agosto, 2024</span>
+                </div>
+            </div>
+            
+            <!-- Tarjeta de opinión 2 -->
+            <div class="opinion-tarjeta">
+                <img src="image/usuario2.jpg" alt="Foto del usuario">
+                <div class="opinion-contenido">
+                    <h3>Ramiro R.</h3>
+                    <p>Ejemplo de opinión del usuario. Esta página me sirvió mucho para entender mis opciones de carrera
+                        y ahora empecé una tecnicatura en programación, luego de hacer un curso introductorio y gratuito
+                        que me recomendaron acá.
+                    </p>
+                    <a href="https://linkedin.com/in/usuario2" target="_blank">Ver usuario en LinkedIn.</a><br>
+                    <span class="fecha">Fecha: 23 de Agosto, 2024</span>
+                </div>
+                </div>
+
+                <!-- Tarjeta de opinión 3 -->
+                <div class="opinion-tarjeta">
+                <img src="image/usuario3.jpg" alt="Foto del usuario">
+                <div class="opinion-contenido">
+                    <h3>Belén B.</h3>
+                    <p>Ejemplo de opinión del usuario. Esta página me sirvió mucho para entender mis opciones de carrera
+                        y ahora empecé una tecnicatura en programación, luego de hacer un curso introductorio y gratuito
+                        que me recomendaron acá.
+                    </p>
+                    <a href="https://linkedin.com/in/usuario3" target="_blank">Ver usuario en LinkedIn.</a><br>
+                    <span class="fecha">Fecha: 23 de Agosto, 2024</span>
+                </div>
+            </div>
+
+                <!-- Añade más tarjetas de opiniones aquí -->
+                
+        </section>
+
+
+    <!-- Contenedor para centrar el botón y el formulario -->
+        <div class="contenedor-opinion">
+        <button class="agregar-opinion"><strong>¡Dejanos tus comentarios!</strong></button>
+
+        <!-- Formulario para añadir opiniones -->
+        <div id="formulario-opinion">
+            <form id="nueva-opinion-form">
+                <label for="nombre">Tu nombre:</label>
+                <input type="text" id="nombre" required> <br></br>
+
+                <label for="linkedin">Tu LinkedIn: (opcional)</label>
+                <input type="url" id="linkedin"><br></br>
+
+                <label for="opinion">Tus comentarios:</label>
+                <textarea id="opinion" required></textarea><br></br>
+
+                <button type="submit"><strong>Enviar Opinión</strong></button>
+            </form>
+        </div>
+        </div>
+
+    </main>
+
+        <!-- FOOTER -->
+        <footer>
+        <div class="footer-container">
+            
+            <div class="logof">
+                <img src="/image/logo-circular.webp" alt="Sabiduría Digital">
+                <span class="footername"><h2>Sabiduría Digital</h2></span>
+            </div>
+            
+            <div class="team">
+                <h3>Equipo de trabajo:</h3>
+                <ul>
+                    <li><a href="#">Sosa Iara</a></li>
+                    <li><a href="#">Guzman Melany</a></li>
+                    <li><a href="#">Alfonso Camila</a></li>
+                    <li><a href="#">Ricardo Fabiola</a></li>
+                    <li><a href="#">Correa Leonel</a></li>
+                </ul>
+            </div>
+    
+            <div class="social">
+                <h3>Nuestras Redes:</h3>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+    
+            <div class="help">
+                <h3>Tu ayuda nos importa!</h3>
+
+                <a href="donacion.html" class="btn btn-donation" ><i class="fa fa-handshake-o" aria-hidden="true"></i> Donaciones</a>
+
+            
+                <a href="#" class="btn btn-subscribe"><i class="fa fa-bell-o" aria-hidden="true"></i> Suscribite</a>
+                
+            </div>
+            
+        </div>
+    
+        <div class="footer-bottom">
+            <p>&copy; 2024 Sabiduría Digital, todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="./javascript/main.js"></script>
+    <script src="./javascript/foro.js"></script>
+</body>
+
+</body>
+</html>
