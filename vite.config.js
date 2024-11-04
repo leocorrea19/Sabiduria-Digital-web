@@ -15,7 +15,7 @@ export default {
             avanzado: resolve('views/avanzado.html'),
             donacion: resolve('views/donacion.html'),
             foro: resolve('views/foro.html'),
-            principiantes: resolve('views/nosotros.html'),
+            principiantes: resolve('views/principiantes.html'),
             inicio: resolve('index.html')
         }
         }
