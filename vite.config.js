@@ -11,13 +11,13 @@ export default {
     build: {
         emptyOutDir: true,
         rollupOptions: {
-        input: {
-            avanzado: resolve('views/avanzado.html'),
-            donacion: resolve('views/donacion.html'),
-            foro: resolve('views/foro.html'),
-            principiantes: resolve('views/principiantes.html'),
-            inicio: resolve('index.html')
-        }
+            input: {
+                avanzado: resolve('views/avanzado.html'),
+                donacion: resolve('views/donacion.html'),
+                foro: resolve('views/foro.html'),
+                principiantes: resolve('views/principiantes.html'),
+                inicio: resolve('index.html')
+            }
         }
     }
 
