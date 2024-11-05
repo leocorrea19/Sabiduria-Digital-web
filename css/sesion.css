@@ -1,0 +1,162 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+:root {
+    --colorPincipal: #004369; /* variables css */
+    --colorBackground: #ace1f5;
+    --colorBody: #ddf6ff;
+    --colorBotones: #f0a73a;
+    --colorPalabras: #1f628e;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.form-box{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    width: 560px;
+    height: 440px;
+    overflow: hidden;
+    z-index: 2;
+    background-color: var(--colorPincipal);
+    border-radius: 40px;
+}
+
+.login-container{
+    /* position: absolute; */
+    left:4px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    transition: .5s ease-in-out;
+}
+
+.register-container{
+    position: absolute;
+    right:-520px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    transition: .5s ease-in-out;
+    padding-right: 40px;
+}
+
+.top span{
+    color: var(--colorBackground);  
+    font-size: 1em;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.top span b {
+    font-weight: 600;
+    color: var(--colorBackground);
+    margin-left: 5px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.top span b:hover {
+    color: var(--colorBotones);
+}
+
+.iniciar-sesion-registrate {
+    font-size: 2em;
+    text-align:center;
+    align-content: center;
+    padding: 10px 0 10px 0;
+    /* background-color: var(--colorBackground); */
+    border-radius: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: var(--colorBackground);
+    font-weight: 600;
+    cursor: context-menu;
+}
+
+.two-forms{
+    display: flex;
+    gap: 10px;
+}
+
+.input-field{
+    font-size: 15px;
+    background-color: rgba(41, 99, 144, 0.4);
+    color: var(--colorBackground);
+    height: 50px;
+    width: 100%;
+    padding: 0 10px 0 45px;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    transition: .2s ease;
+}
+
+.input-field:hover, .input-field:focus{
+    background: rgba(100, 155, 197, 0.63);
+}
+
+
+::-webkit-input-placeholder{
+    color: var(--colorBackground);
+}
+
+.input-box i{
+position: relative;
+top: -35PX;
+left: 17PX;
+color: var(--colorBotones);
+}
+
+.submit{
+    font-size: 1.5em;
+    font-weight: 600;
+    color: var(--colorPalabras);
+    height: 45px;
+    width: 100%;
+    border:none;
+    border-radius: 30px;
+    background: var(--colorBackground);
+    cursor:pointer;
+    transition: .3s ease-in-out; 
+}
+
+.submit:hover{
+    background: var(--colorBotones);
+    box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+}
+
+
+.two-col{
+    display: flex;
+    justify-content: space-between;
+    color: var(--colorBackground);
+    font-size: small;
+    font-weight: 600;
+    margin-top: 10px;
+
+}
+
+.two-col .one{
+    display: flex;
+    gap:5px;
+}
+
+.two label a{
+    text-decoration: none;
+    color: var(--colorBackground);
+    padding-right: 15px;
+}
+
+.two label a:hover{
+    text-decoration: underline;
+}
