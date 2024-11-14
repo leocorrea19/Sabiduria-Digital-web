@@ -18,6 +18,8 @@ botonCancelar.addEventListener('click', function() {
     formulario.style.display = 'none';
 
     botonAgregarOpinion.style.display = 'block'
+
+    limpiarClasificacion()
 });
 
 /* Seccion clasificacion */
