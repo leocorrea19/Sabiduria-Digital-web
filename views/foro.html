@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 <body>
 
@@ -39,43 +42,90 @@
 
             <!-- Tarjeta de opinión 1 -->
             <div class="opinion-tarjeta">
-                <img src="/image/usuario1.jpg" alt="Foto del usuario">
+
+                <img src="/image/gatito.webp" alt="Foto del usuario">
+
                 <div class="opinion-contenido">
+
                     <h3>Julieta J.</h3>
                     <p>Ejemplo de opinión del usuario. Esta página me sirvió mucho para entender mis opciones de carrera
                         y ahora empecé una tecnicatura en programación, luego de hacer un curso introductorio y gratuito
                         que me recomendaron acá.
                     </p>
-                    <a href="https://linkedin.com/in/usuario1" target="_blank">Ver usuario en LinkedIn.</a><br>
-                    <span class="fecha">Fecha: 23 de Agosto, 2024</span>
+                    <div class="fecha-linkedin-clasificacion">
+
+                        <span class="fecha">Fecha: 23/08/2024</span>
+
+                        <a href="https://linkedin.com/in/usuario1" target="_blank"><i class='bx bxl-linkedin-square bx-sm' ></i> LinkedIn.</a>
+
+                        <div class="clasificacion">
+                            <i class='bx bx-brain bx-sm' style='color:#f0a73a'></i>
+                            <i class='bx bx-brain bx-sm' style='color:#f0a73a'></i>
+                            <i class='bx bx-brain bx-sm' style='color:#f0a73a'></i>
+                            <i class='bx bx-brain bx-sm' style='color:#f0a73a'></i>
+                            <i class='bx bx-brain bx-sm' style='color:#f0a73a'></i>
+                        </div>
+                    </div>
                 </div>
             </div>
             
             <!-- Tarjeta de opinión 2 -->
             <div class="opinion-tarjeta">
-                <img src="/image/usuario2.jpg" alt="Foto del usuario">
+
+                <img src="/image/perrito.webp" alt="Foto del usuario">
+
                 <div class="opinion-contenido">
+                    
                     <h3>Ramiro R.</h3>
                     <p>Ejemplo de opinión del usuario. Esta página me sirvió mucho para entender mis opciones de carrera
                         y ahora empecé una tecnicatura en programación, luego de hacer un curso introductorio y gratuito
                         que me recomendaron acá.
                     </p>
-                    <a href="https://linkedin.com/in/usuario2" target="_blank">Ver usuario en LinkedIn.</a><br>
-                    <span class="fecha">Fecha: 23 de Agosto, 2024</span>
-                </div>
-                </div>
+                    <div class="fecha-linkedin-clasificacion">
+                        
+                        <span class="fecha">Fecha: 23/08/2024</span>
 
-                <!-- Tarjeta de opinión 3 -->
-                <div class="opinion-tarjeta">
-                <img src="/image/usuario3.jpg" alt="Foto del usuario">
+                        <a href="https://linkedin.com/in/usuario2" target="_blank"><i class='bx bxl-linkedin-square bx-sm' ></i> LinkedIn.</a>
+
+                        <div class="clasificacion">
+                            <i class='bx bx-brain bx-sm' style='color:#f0a73a'></i>
+                            <i class='bx bx-brain bx-sm' style='color:#f0a73a'></i>
+                            <i class='bx bx-brain bx-sm' style='color:#f0a73a'></i>
+                            <i class='bx bx-brain bx-sm' style='color:#f0a73a'></i>
+                            <i class='bx bx-brain bx-sm' style='color:#f0a73a'></i>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta de opinión 3 -->
+            <div class="opinion-tarjeta">
+
+                <img src="/image/zorrito.png" alt="Foto del usuario">
+                
                 <div class="opinion-contenido">
+
                     <h3>Belén B.</h3>
                     <p>Ejemplo de opinión del usuario. Esta página me sirvió mucho para entender mis opciones de carrera
                         y ahora empecé una tecnicatura en programación, luego de hacer un curso introductorio y gratuito
                         que me recomendaron acá.
                     </p>
-                    <a href="https://linkedin.com/in/usuario3" target="_blank">Ver usuario en LinkedIn.</a><br>
-                    <span class="fecha">Fecha: 23 de Agosto, 2024</span>
+                    <div class="fecha-linkedin-clasificacion">
+                        
+                        <span class="fecha">Fecha: 23/08/2024</span>
+
+                        <a href="https://linkedin.com/in/usuario3" target="_blank"><i class='bx bxl-linkedin-square bx-sm'></i> LinkedIn.</a>
+
+                        <div class="clasificacion">
+                            <i class='bx bx-brain bx-sm' style='color:#f0a73a'></i>
+                            <i class='bx bx-brain bx-sm' style='color:#f0a73a'></i>
+                            <i class='bx bx-brain bx-sm' style='color:#f0a73a'></i>
+                            <i class='bx bx-brain bx-sm' style='color:#f0a73a'></i>
+                            <i class='bx bx-brain bx-sm'></i>
+                        </div>
+
+                    </div>
                 </div>
             </div>
 
@@ -100,7 +150,21 @@
                 <label for="opinion">Tus comentarios:</label>
                 <textarea id="opinion" required></textarea><br></br>
 
-                <button type="submit"><strong>Enviar Opinión</strong></button>
+                <label for="clasificacion">¿Cómo calificarías nuestra página?</label>
+                <div class="container-seleccion-clasificacion">
+                    <i class='bx bx-brain bx-md clasificacion-ingreso' id="clasificacion-1"></i>
+                    <i class='bx bx-brain bx-md clasificacion-ingreso' id="clasificacion-2"></i>
+                    <i class='bx bx-brain bx-md clasificacion-ingreso' id="clasificacion-3"></i>
+                    <i class='bx bx-brain bx-md clasificacion-ingreso' id="clasificacion-4"></i>
+                    <i class='bx bx-brain bx-md clasificacion-ingreso' id="clasificacion-5"></i>
+                </div>
+
+                <div>
+                    <button type="submit"><strong>Enviar Opinión</strong></button>
+
+                    <button type="submit" class="cancelar"><strong >Cancelar</strong></button>
+                </div>
+
             </form>
         </div>
         </div>
