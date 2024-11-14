@@ -17,6 +17,7 @@ export default {
                 foro: resolve('views/foro.html'),
                 principiantes: resolve('views/principiantes.html'),
                 sesion: resolve('views/sesion.html'),
+                subs: resolve('views/subs.html'),
                 inicio: resolve('index.html')
             }
         }

@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const tarjetaDonacion = document.getElementById('tarjeta-donacion');
+    const tarjetaSuscribirse = document.getElementById('tarjeta-suscribirse');
     const formularioPago = document.getElementById('formulario-pago');
 
-    if (tarjetaDonacion) {
-        tarjetaDonacion.addEventListener('click', function() {
+    if (tarjetaSuscribirse) {
+        tarjetaSuscribirse.addEventListener('click', function() {
             formularioPago.style.display = 'block'; // Muestra el formulario
         });
     }
