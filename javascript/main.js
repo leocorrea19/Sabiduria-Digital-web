@@ -10,8 +10,6 @@ import * as infoLicenciatura from '../javascript/info-licenciaturas.js'
 import * as infoTecnicatura from '../javascript/info-tecnicatura.js'
 import * as infoCurso from '../javascript/info-cursos.js'
 
-// console.log(InfoIngenieria.arrayFormacionesIngenieria)
-
 window.addEventListener('DOMContentLoaded', function() {
     
     const divSlider = document.querySelector('#id-slider-ingenieria')
