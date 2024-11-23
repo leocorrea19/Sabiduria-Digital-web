@@ -222,13 +222,38 @@ footer {
 
 /* ! MAIN */
 
+.container-redireccion-avanzados {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 8rem 0;
+}
+
+    .container-redireccion-avanzados h2 {
+        font-size: 3em;
+        text-shadow: -3px 7px 15px rgba(0,0,0,0.52);
+    }
+
+    .container-redireccion-avanzados p {
+        font-size: 1.5em;
+        padding-top: 50px;
+        text-shadow: -3px 7px 15px rgba(0,0,0,0.52);
+    }
+
+    .container-redireccion-avanzados p a {
+        color: var(--colorPalabras);
+        text-decoration: underline;
+        text-shadow: -3px 7px 15px rgba(0,0,0,0.52);
+    }
+
    /* ! cajas */
 .carousel {
     position: relative;
     width: 100%;
     max-width: 900px;
     margin: auto;
-    overflow: hidden;
+    overflow: clip;
     background-color:#ddf6ff ; /* Fondo del carrusel */
     margin: 8em auto;
 }
@@ -257,17 +282,23 @@ footer {
     width: 28%;
 }
 
-.course-card img {
-    max-width: 100%;
-    margin-bottom: 15px;
+.icon-container a {
+    color: white;
+    text-decoration: underline;
+    transition: .5s;
 }
+
+    .icon-container a:hover {
+        color: var(--colorBotones);
+        transition: .5s;
+    }
 
 .carousel-control-prev,
 .carousel-control-next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(255, 165, 0, 0.8); /* Naranja semi-transparente */
+    background-color: var(--colorBotones); /* Naranja semi-transparente */
     color: white;
     border: none;
     padding: 15px; /* Espaciado para hacer los botones más grandes */
@@ -280,11 +311,11 @@ footer {
 }
 
 .carousel-control-prev {
-    left: 10px;
+    left: 0px;
 }
 
 .carousel-control-next {
-    right: 10px;
+    right: 0px;
 }
 
 /* Efecto hover para cambiar el color y el tamaño al pasar el cursor */

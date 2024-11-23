@@ -287,6 +287,7 @@ footer {
 .formulario-pago h2 {
     color: var(--colorPalabras);
     margin-bottom: 15px;
+    font-size: 1.5em;
 }
 
 .formulario-pago input,
@@ -300,18 +301,33 @@ footer {
     box-sizing: border-box;
 }
 
-.formulario-pago button {
-    background-color: var(--colorPincipal); /* Naranja de la paleta */
-    color: var(--colorBackground);
-    font-weight: 900;
-    border: none;
-    cursor: pointer;
-    transition: .5s;
+.formulario-pago h3 {
+    color: var(--colorPalabras);
+    margin-bottom: 15px;
+    margin-top: 15px;
+    font-size: 1.2em;
 }
 
-.formulario-pago button:hover {
-    box-shadow: inset 0 -3rem 0 0 var(--colorBotones); /* Color de fondo al pasar el ratón sobre el botón, se rellena de abajo para arriba */
-    color: black; /* se cambia el color de la letra a negro para que sea mas legible */
-    transition: .5s;
+.formulario-pago .qr-subs {
+    display: block;
+    border-radius: 5%;
+    margin-bottom: 20px;
+    width: 100%;
 }
+
+    .formulario-pago button {
+        background-color: var(--colorPincipal); /* Naranja de la paleta */
+        color: var(--colorBackground);
+        font-weight: 900;
+        border: none;
+        cursor: pointer;
+        transition: .5s;
+    }
+
+        .formulario-pago button:hover {
+            box-shadow: inset 0 -3rem 0 0 var(--colorBotones); /* Color de fondo al pasar el ratón sobre el botón, se rellena de abajo para arriba */
+            color: black; /* se cambia el color de la letra a negro para que sea mas legible */
+            transition: .5s;
+        }
+
 
