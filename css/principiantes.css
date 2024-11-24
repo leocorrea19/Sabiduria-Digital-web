@@ -22,12 +22,6 @@
     scroll-behavior: smooth;
 }
 
-body {
-    font-family: "Josefin Sans", sans-serif;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: var(--colorBody);
-}
-
 a {
     text-decoration: none;
 }

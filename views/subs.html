@@ -18,109 +18,109 @@
 </head>
 <body>
 
+    <div class="container-maestro">
     <!-- Barra de navegacion -->
-    <header>
-        <div class="navbar">
-            <a href="/index.html" class="logo">
-                <img src="/image/logo-circular.webp" alt="Logo de Sabiduría Digital">
-                <span>Sabiduría Digital</span>
-            </a>
-            <nav>
-                <a href="/index.html">Inicio</a>
-                <a href="foro.html">Foro</a>
-                <a href="sesion.html" id="loginBtn" class="login">Iniciar Sesión</a>
-                <a href="sesion.html" id="registerBtn" class="login">Registrarse</a>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <h2 class="titulo-seccion">Suscripción.</h2>
-
-        <div class="tarjetas-container">
-
-            <!-- Tarjeta suscribirse-->
-            <div class="tarjeta" id="tarjeta-suscribirse">
-                <h2>¿Por qué suscribirte?</h2>
-                <p>Si querés enterarte de las novedades de Sabiduría Digital, suscribite a nuestro newsletter donde encontrarás:</p> <br>    
-                <ul>
-                    <li><i class='bx bxs-check-circle' style='color:#f0a73a'></i> Los cursos y carreras nuevas que se vayan agregando al sitio cada mes.</li>
-                    <li><i class='bx bxs-check-circle' style='color:#f0a73a'></i> Descuentos exclusivos de Sabiduría Digital para acceder a cursos pagos.</li>
-                    <li><i class='bx bxs-check-circle' style='color:#f0a73a'></i> Noticias relevantes sobre tecnología</li>
-                    <li><i class='bx bxs-check-circle' style='color:#f0a73a'></i> ¡Y más!</li>
-                </ul>
+        <header>
+            <div class="navbar">
+                <a href="/index.html" class="logo">
+                    <img src="/image/logo-circular.webp" alt="Logo de Sabiduría Digital">
+                    <span>Sabiduría Digital</span>
+                </a>
+                <nav>
+                    <a href="/index.html">Inicio</a>
+                    <a href="foro.html">Foro</a>
+                    <a href="sesion.html" id="loginBtn" class="login">Iniciar Sesión</a>
+                    <a href="sesion.html" id="registerBtn" class="login">Registrarse</a>
+                </nav>
             </div>
-        </div>
+        </header>
 
-        <div class="formulario-pago" id="formulario-pago">
-            <h2>Formulario de Pago</h2>
-            <form id="form-pago">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
+        <main>
+            <h2 class="titulo-seccion">Suscripción.</h2>
 
-                <label for="apellido">Apellido:</label>
-                <input type="text" id="apellido" name="apellido" required>
+            <div class="tarjetas-container">
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <!-- Tarjeta suscribirse-->
+                <div class="tarjeta" id="tarjeta-suscribirse">
+                    <h2>¿Por qué suscribirte?</h2>
+                    <p>Si querés enterarte de las novedades de Sabiduría Digital, suscribite a nuestro newsletter donde encontrarás:</p> <br>    
+                    <ul>
+                        <li><i class='bx bxs-check-circle' style='color:#f0a73a'></i> Los cursos y carreras nuevas que se vayan agregando al sitio cada mes.</li>
+                        <li><i class='bx bxs-check-circle' style='color:#f0a73a'></i> Descuentos exclusivos de Sabiduría Digital para acceder a cursos pagos.</li>
+                        <li><i class='bx bxs-check-circle' style='color:#f0a73a'></i> Noticias relevantes sobre tecnología</li>
+                        <li><i class='bx bxs-check-circle' style='color:#f0a73a'></i> ¡Y más!</li>
+                    </ul>
+                </div>
+            </div>
 
-                <h3>Escanea y paga tan solo $1.000 (al realizar el pago recuerde guardar el comprobante para subirlo)</h3>
+            <div class="formulario-pago" id="formulario-pago">
+                <h2>Formulario de Pago</h2>
+                <form id="form-pago">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
 
-                <img src="/public/image/qr-subs.webp" alt="QR Suscripción" class="qr-subs">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido" required>
 
-                <label for="email">Subir comprobante:</label>
-                <input type="file" name="archivo" accept=".pdf, .jpg, .png" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
 
-                <button type="submit">Completar</button>
+                    <h3>Escanea y paga tan solo $1.000 (al realizar el pago recuerde guardar el comprobante para subirlo)</h3>
+
+                    <img src="/image/qr-subs.webp" alt="QR Suscripción" class="qr-subs">
+
+                    <label for="email">Subir comprobante:</label>
+                    <input type="file" name="archivo" accept=".pdf, .jpg, .png" required>
+
+                    <button type="submit">Completar</button>
+                    
+                </form>
+            </div>
+        </main>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="footer-container">
                 
-            </form>
-        </div>
-    </main>
+                <div class="logof">
+                    <img src="/image/logo-circular.webp" alt="Sabiduría Digital">
+                    <span class="footername"><h2>Sabiduría Digital</h2></span>
+                </div>
+                
+                <div class="team">
+                    <h3>Equipo de trabajo:</h3>
+                    <ul>
+                        <li><a href="https://www.linkedin.com/in/iara-aylen-sosa/" target="_blank">Sosa Iara</a></li>
+                        <li><a href="https://www.linkedin.com/in/camila-belen-alfonso/" target="_blank">Alfonso Camila</a></li>
+                        <li><a href="https://www.linkedin.com/in/fabiolaricardo/" target="_blank">Ricardo Fabiola</a></li>
+                        <li><a href="https://www.linkedin.com/in/leonel-javier-correa/" target="_blank">Correa Leonel</a></li>
+                    </ul>
+                </div>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-container">
-            
-            <div class="logof">
-                <img src="/image/logo-circular.webp" alt="Sabiduría Digital">
-                <span class="footername"><h2>Sabiduría Digital</h2></span>
-            </div>
-            
-            <div class="team">
-                <h3>Equipo de trabajo:</h3>
-                <ul>
-                    <li><a href="#">Sosa Iara</a></li>
-                    <li><a href="#">Guzman Melany</a></li>
-                    <li><a href="#">Alfonso Camila</a></li>
-                    <li><a href="#">Ricardo Fabiola</a></li>
-                    <li><a href="#">Correa Leonel</a></li>
-                </ul>
-            </div>
+                <div class="social">
+                    <h3>Nuestras Redes:</h3>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
 
-            <div class="social">
-                <h3>Nuestras Redes:</h3>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-            </div>
+                <div class="help">
+                    <h3>Tu ayuda nos importa!</h3>
 
-            <div class="help">
-                <h3>Tu ayuda nos importa!</h3>
+                    <a href="donacion.html" class="btn btn-donation" ><i class="fa fa-handshake-o" aria-hidden="true"></i> Donaciones</a>
 
-                <a href="donacion.html" class="btn btn-donation" ><i class="fa fa-handshake-o" aria-hidden="true"></i> Donaciones</a>
-
-            
-                <a href="subs.html" class="btn btn-subscribe"><i class="fa fa-bell-o" aria-hidden="true"></i> Suscribite</a>
+                
+                    <a href="subs.html" class="btn btn-subscribe"><i class="fa fa-bell-o" aria-hidden="true"></i> Suscribite</a>
+                    
+                </div>
                 
             </div>
-            
-        </div>
 
-        <div class="footer-bottom">
-            <p>&copy; 2024 Sabiduría Digital, todos los derechos reservados.</p>
-        </div>
-    </footer>
-
+            <div class="derechos-reservados">
+                <p>&copy; 2024 Sabiduría Digital, todos los derechos reservados.</p>
+            </div>
+        </footer>
+    </div>
     <script type="module" src="/javascript/subs.js"></script>
 </body>
 </html>

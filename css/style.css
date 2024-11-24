@@ -50,6 +50,12 @@ body {
     color: var(--colorPalabras);
 }
 
+.container-maestro {
+    display: grid;
+    min-height: 100dvh;
+    grid-template-rows: auto 1fr auto;
+}
+
 header {
     background-color: var(--colorPincipal); /* Color de fondo del nav */
     padding: 5px 10px; /* Reduce el padding para hacer el nav más delgado */
@@ -631,7 +637,7 @@ footer {
 
         .footer-container h2, .footer-container h3 {
             margin-bottom: 15px;
-            font-size: 1.5em;
+            font-size: 1.2em;
         }
 
 
@@ -650,7 +656,7 @@ footer {
                 text-align: center;
                 width: auto;
                 padding-right: 0;
-                font-size: 1.5em; /* Ajusta el tamaño del texto */
+                font-size: 1.2em; /* Ajusta el tamaño del texto */
                 color: white;
                 font-weight: 800; /* Aplica negrita al texto */
             }
@@ -667,7 +673,7 @@ footer {
 
                 .team ul li a {
                     color: white;
-                    font-size: 1.6em;
+                    font-size: 1.5em;
                 }
 
                 .team ul li a:hover {
@@ -697,7 +703,7 @@ footer {
         width: auto;
         height: auto;
         text-align: center;
-        font-size: 1.2em;
+        font-size: 1em;
     }
 
     .help .btn:hover {
