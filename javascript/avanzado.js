@@ -173,6 +173,9 @@ window.addEventListener('DOMContentLoaded', function() {
         dato.instituciones.forEach(function(facultad) {
             // console.log(facultad)
             
+            const divSliderFacultades = document.createElement('div')
+            divSliderFacultades.classList.add('slider-facultades')
+            
             const NombreFacultadCarreraLicenciatura = document.createElement('a')
             NombreFacultadCarreraLicenciatura.classList.add('nombre-de-la-facultad')
 
@@ -184,8 +187,10 @@ window.addEventListener('DOMContentLoaded', function() {
             NombreFacultadCarreraLicenciatura.target = "_blank"
             mensajeCarreraLicenciatura.textContent = facultad.mensaje
 
-            divSliderSectionLicenciatura.appendChild(NombreFacultadCarreraLicenciatura)
-            divSliderSectionLicenciatura.appendChild(mensajeCarreraLicenciatura)
+            divSliderFacultades.appendChild(NombreFacultadCarreraLicenciatura)
+            divSliderFacultades.appendChild(mensajeCarreraLicenciatura)
+
+            divSliderSectionLicenciatura.appendChild(divSliderFacultades)
 
         })
 
@@ -305,6 +310,9 @@ window.addEventListener('DOMContentLoaded', function() {
         dato.instituciones.forEach(function(facultad) {
             // console.log(facultad)
             
+            const divSliderFacultades = document.createElement('div')
+            divSliderFacultades.classList.add('slider-facultades')
+
             const NombreFacultadCarreraTecnicatura = document.createElement('a')
             NombreFacultadCarreraTecnicatura.classList.add('nombre-de-la-facultad')
 
@@ -316,8 +324,10 @@ window.addEventListener('DOMContentLoaded', function() {
             NombreFacultadCarreraTecnicatura.target = "_blank"
             mensajeCarreraTecnicatura.textContent = facultad.mensaje
 
-            divSliderSectionTecnicatura.appendChild(NombreFacultadCarreraTecnicatura)
-            divSliderSectionTecnicatura.appendChild(mensajeCarreraTecnicatura)
+            divSliderFacultades.appendChild(NombreFacultadCarreraTecnicatura)
+            divSliderFacultades.appendChild(mensajeCarreraTecnicatura)
+
+            divSliderSectionTecnicatura.appendChild(divSliderFacultades)
 
         })
 
@@ -417,9 +427,6 @@ window.addEventListener('DOMContentLoaded', function() {
         const subtituloCarreraCurso = document.createElement('h4')
         subtituloCarreraCurso.classList.add('subtitulo-para-las-facultades')
 
-        
-
-
         // console.log(divSliderSecctionIngenieria, nombreDeLaCarreraCurso, infoDeLaCarreraCurso)
 
         /* asigno la info */
@@ -438,6 +445,9 @@ window.addEventListener('DOMContentLoaded', function() {
         dato.instituciones.forEach(function(facultad) {
             // console.log(facultad)
             
+            const divSliderFacultades = document.createElement('div')
+            divSliderFacultades.classList.add('slider-facultades')
+
             const NombreFacultadCarreraCurso = document.createElement('a')
             NombreFacultadCarreraCurso.classList.add('nombre-de-la-facultad')
 
@@ -449,8 +459,10 @@ window.addEventListener('DOMContentLoaded', function() {
             NombreFacultadCarreraCurso.target = "_blank"
             mensajeCarreraCurso.textContent = facultad.mensaje
 
-            divSliderSectionCurso.appendChild(NombreFacultadCarreraCurso)
-            divSliderSectionCurso.appendChild(mensajeCarreraCurso)
+            divSliderFacultades.appendChild(NombreFacultadCarreraCurso)
+            divSliderFacultades.appendChild(mensajeCarreraCurso)
+
+            divSliderSectionCurso.appendChild(divSliderFacultades)
 
         })
 
