@@ -372,7 +372,7 @@ footer {
             .titulo-de-la-carrera {
                 font-size: 1.5em;
                 font-weight: 800;
-                height: 250px;
+                height: auto;
                 padding-right: 25px;
             }
 
@@ -381,7 +381,7 @@ footer {
                 /* padding-top: 20px; */
                 font-size: 1em;
                 font-weight: 500;
-                height: 300px;
+                height: auto;
                 padding-top: 10px;
             }
 
@@ -393,13 +393,12 @@ footer {
 
             .slider-facultades {
                 background-color: var(--colorPalabras);
-                width: 15rem;
-                height: 100%;
+                width: auto;
+                height: auto;
                 padding: 5px;
-                margin: auto;
-                border-radius: 20px;
+                border-radius: 10px;
                 /* padding-left: 10px; */
-                margin: 15px 0 15px 0;
+                margin: 10px 0 10px 0;
                 transition: .5s;
             }
 
@@ -853,7 +852,7 @@ footer {
             margin: auto;
             border-radius: 20px;
             /* padding-left: 10px; */
-            padding-bottom: 10px;
+            padding: 5px;
             transition: .5s;
         }
 
