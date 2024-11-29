@@ -102,8 +102,8 @@ function limpiarClasificacion() {
         event.preventDefault(); // Evita que se recargue la página
 
         // Obtener los valores de los campos del formulario
-        const nombre = document.getElementById('nombre').value;
-        const linkedin = document.getElementById('linkedin').value;
+        const nombre = 'Leonel Correa';
+        const linkedin = 'https://www.linkedin.com/in/leonel-javier-correa/';
         const opinion = document.getElementById('opinion').value;
 
         // Crear una nueva tarjeta de opinión
