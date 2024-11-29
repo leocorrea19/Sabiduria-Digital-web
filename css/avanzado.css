@@ -347,6 +347,38 @@ footer {
             color: var(--colorPalabras);
         }
 
+            .class-sliders-ingenieria { /* contenedor de las formaciones */
+                width: 300%;
+                height: 100%;
+                /* margin-left: 20%; */
+                display: flex;
+                color: var(--colorPalabras);
+            }
+
+            .class-sliders-tecnicaturas { /* contenedor de las formaciones */
+                width: 350%;
+                height: 100%;
+                /* margin-left: 32%; */
+                display: flex;
+                color: var(--colorPalabras);
+            }
+            
+            .class-sliders-licenciaturas { /* contenedor de las formaciones */
+                width: 520%;
+                height: 100%;
+                /* margin-left: 32%; */
+                display: flex;
+                color: var(--colorPalabras);
+            }
+
+            .class-sliders-curso { /* contenedor de las formaciones */
+                width: 350%;
+                height: 100%;
+                /* margin-left: 32%; */
+                display: flex;
+                color: var(--colorPalabras);
+            }
+
         .slider-section-ingenieria, 
         .slider-section-licenciatura,
         .slider-section-tecnicatura,
