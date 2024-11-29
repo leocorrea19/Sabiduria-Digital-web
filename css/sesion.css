@@ -250,7 +250,7 @@ footer {
 
     .register-container{
         position: absolute;
-        /* right:-520px; */
+        right:-520px;
         width: 100%;
         display: flex;
         flex-direction: column;
