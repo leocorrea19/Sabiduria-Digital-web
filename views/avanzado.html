@@ -1,234 +1,262 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> <!-- botonones del carrusel -->
-    
-    <link rel="stylesheet" href="/css/avanzado.css">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="icon" href="/image/logo-para-ventana.webp">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> <!-- botonones del carrusel -->
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/avanzado.css">
 
-    <title>Sabiduría Digital</title>
-  </head>
-  <body>
-    
+  <link rel="icon" href="/image/logo-para-ventana.webp">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <title>Avanzado - Sabiduría Digital</title>
+</head>
+
+<body>
+
+  <div class="container-maestro">
     <!-- Barra de navegacion -->
     <header>
       <div class="navbar">
-          <a href="/index.html" class="logo">
-              <img src="/image/logo-circular.webp" alt="Logo de Sabiduría Digital">
-              <span>Sabiduría Digital</span>
-          </a>
-          <nav>
-              <a href="/index.html">Inicio</a>
-              <a href="foro.html">Foro</a>
-              <a href="sesion.html" id="loginBtn" class="login">Iniciar Sesión</a>
-              <a href="sesion.html" id="registerBtn" class="login">Registrarse</a>
-          </nav>
+        <a href="/index.html" class="logo">
+          <img src="/image/logo-circular.webp" alt="Logo de Sabiduría Digital">
+          <span>Sabiduría Digital</span>
+        </a>
+
+        <div class="hamburger-menu" id="hamburger-menu">
+          <i class='bx  bx-menu bx-sm' style='color:#ace1f5'></i>
+        </div>
+
+        <nav class="nav-links" id="nav-links">
+          <a href="/index.html">Inicio</a>
+          <a href="/views/foro.html">Foro</a>
+          <a href="/views/sesion.html" id="loginBtn" class="login">Iniciar Sesión</a>
+          <a href="/views/sesion.html" id="registerBtn" class="login">Registrarse</a>
+        </nav>
       </div>
     </header>
+  </div>
 
-    <!--  MAIN -->
-    <main>
+  <!--  MAIN -->
+  <main>
 
-      <!-- ! TITULO TIPO DE FORMACIONES -->
-      <div class="contenedor-tipo-formaciones">
+    <!-- ! TITULO TIPO DE FORMACIONES -->
+    <div class="contenedor-tipo-formaciones">
 
-        <div class="div-container-tipo-formacion-y-redireccion-a-principiantes">
-          <h2 class="titulo-tipos-de-formacion">
-            ¿Qué tipo de formación te interesa?
-          </h2>
+      <div class="div-container-tipo-formacion-y-redireccion-a-principiantes">
+        <h2 class="titulo-tipos-de-formacion">
+          ¿Qué tipo de formación te interesa?
+        </h2>
 
-          <p>
-            <strong>¿No te interesa esta sección?</strong> 
-            <br>Podes visitar nuestra pagina de 
-            <a href="principiantes.html">
-              <strong>PRINCIPIANTES.</strong>
-            </a>
-          </p>
+        <p>
+          <strong>¿No te interesa esta sección?</strong>
+          <br>Podes visitar nuestra pagina de
+          <a href="/views/principiantes.html">
+            <strong>PRINCIPIANTES.</strong>
+          </a>
+        </p>
+      </div>
+
+      <!-- ! TIPOS DE FORMACIONES -->
+      <div class="lista-de-formaciones">
+
+        <div class="item-formacion">
+          <a href="#seccion-ingenieria" class="nombre-de-la-formacion">Ingenierías</a>
         </div>
 
-        <!-- ! TIPOS DE FORMACIONES -->
-        <div class="lista-de-formaciones">
-            
-          <div class="item-formacion">
-            <a href="#seccion-ingenieria" class="nombre-de-la-formacion">Ingenierías</a>
-          </div>
-
-          <div class="item-formacion">
-            <a href="#seccion-licenciatura" class="nombre-de-la-formacion">Licenciaturas</a>
-          </div>
-
-          <div class="item-formacion">
-            <a href="#seccion-tecnicatura" class="nombre-de-la-formacion">Tecnicaturas</a>
-          </div>
-
-          <div class="item-formacion">
-            <a href="#seccion-curso" class="nombre-de-la-formacion">Cursos</a>
-          </div>
-
+        <div class="item-formacion">
+          <a href="#seccion-licenciatura" class="nombre-de-la-formacion">Licenciaturas</a>
         </div>
-      </div>
 
-<!-- ! SECCION FORMACIONES DE INGENIERIA -->
-      <div class="div-titulo">
-        <h2 class="titulo" id="seccion-ingenieria">Ingeniería</h2>
-      </div>
-      
-      <!-- INFO DE QUE ES UNA INGENIERIA -->
-      <div class="div-info-sobre">
-        <p class="info-sobre">
-          La carrera de ingeniería forma a los estudiantes en la aplicación de principios científicos y matemáticos para diseñar, construir y optimizar soluciones tecnológicas. Con una duración de 6 años, ofrece conocimientos teóricos y prácticos en áreas específicas, preparando a los graduados para resolver problemas complejos y liderar proyectos en diversos sectores industriales y tecnológicos.
-        </p>
-      </div>
+        <div class="item-formacion">
+          <a href="#seccion-tecnicatura" class="nombre-de-la-formacion">Tecnicaturas</a>
+        </div>
 
-      <!-- SLIDERS INGENIERIA -->
-      <div class="contenedor">
-      
-        <div class="class-sliders class-sliders-ingenieria" id="id-slider-ingenieria"></div>
-  
-        <!-- Botones -->
-        <div class="btn-left btn-left-ingenieria"><i class='bx bxs-left-arrow-circle'></i></div>
-        <div class="btn-right btn-right-ingenieria"><i class='bx bxs-right-arrow-circle' ></i></div>
+        <div class="item-formacion">
+          <a href="#seccion-curso" class="nombre-de-la-formacion">Cursos</a>
+        </div>
 
       </div>
+    </div>
+
+    <!-- ! SECCION FORMACIONES DE INGENIERIA -->
+    <div class="div-titulo">
+      <h2 class="titulo" id="seccion-ingenieria">Ingeniería</h2>
+    </div>
+
+    <!-- INFO DE QUE ES UNA INGENIERIA -->
+    <div class="div-info-sobre">
+      <p class="info-sobre">
+        La carrera de ingeniería forma a los estudiantes en la aplicación de principios científicos y matemáticos para
+        diseñar, construir y optimizar soluciones tecnológicas. Con una duración de 6 años, ofrece conocimientos
+        teóricos y prácticos en áreas específicas, preparando a los graduados para resolver problemas complejos y
+        liderar proyectos en diversos sectores industriales y tecnológicos.
+      </p>
+    </div>
+
+    <!-- SLIDERS INGENIERIA -->
+    <div class="contenedor">
+
+      <div class="class-sliders class-sliders-ingenieria" id="id-slider-ingenieria"></div>
+
+      <!-- Botones -->
+      <div class="btn-left btn-left-ingenieria"><i class='bx bxs-left-arrow-circle'></i></div>
+      <div class="btn-right btn-right-ingenieria"><i class='bx bxs-right-arrow-circle'></i></div>
+
+    </div>
 
 
-<!-- ! ------------------------------------------------------ -->
-<!-- ! ------------------------------------------------------ -->
-<!-- ! ------------------------------------------------------ -->
-<!-- ! ------------------------------------------------------ -->
+    <!-- ! ------------------------------------------------------ -->
+    <!-- ! ------------------------------------------------------ -->
+    <!-- ! ------------------------------------------------------ -->
+    <!-- ! ------------------------------------------------------ -->
 
 
-      <!-- ! SECCION FORMACION LICENCIATURA -->
-      <div class="div-titulo">
-        <h2 class="titulo" id="seccion-licenciatura">Licenciatura</h2>
+    <!-- ! SECCION FORMACION LICENCIATURA -->
+    <div class="div-titulo">
+      <h2 class="titulo" id="seccion-licenciatura">Licenciatura</h2>
+    </div>
+
+    <!-- INFO DE QUE ES UNA LICENCIATURA -->
+    <div class="div-info-sobre">
+      <p class="info-sobre">
+        Una licenciatura es un programa universitario de 5 a 6 años que ofrece una formación académica sólida en una
+        disciplina específica. Los estudiantes que cursan una licenciatura desarrollan habilidades analíticas, críticas
+        y de investigación, lo que les permite tener una comprensión amplia y sólida de su campo de estudio. Al
+        graduarse, se obtiene el título de Licenciado, lo que permite ejercer la profesión o continuar con estudios de
+        posgrado.
+      </p>
+    </div>
+
+    <!-- SLIDERS LICENCIATURA-->
+    <div class="contenedor">
+
+      <div class="class-sliders class-sliders-licenciaturas" id="id-slider-licenciatura"></div>
+
+      <!-- Botones -->
+      <div class="btn-left btn-left-licenciatura"><i class='bx bxs-left-arrow-circle'></i></div>
+      <div class="btn-right btn-right-licenciatura"><i class='bx bxs-right-arrow-circle'></i></div>
+
+    </div>
+
+    <!-- ! ------------------------------------------------------ -->
+    <!-- ! ------------------------------------------------------ -->
+    <!-- ! ------------------------------------------------------ -->
+    <!-- ! ------------------------------------------------------ -->
+
+
+    <!-- ! SECCION FORMACION TECNICATURA -->
+    <div class="div-titulo">
+      <h2 class="titulo" id="seccion-tecnicatura">Tecnicatura</h2>
+    </div>
+
+    <!-- INFO DE QUE ES UNA TECNICATURA -->
+    <div class="div-info-sobre">
+      <p class="info-sobre">
+        Una tecnicatura es un programa educativo de nivel terciario que se enfoca en la formación técnica y práctica en
+        un área específica. Su duración es generalmente más corta que la de una carrera universitaria, normalmente entre
+        2 y 3 años. Las tecnicaturas están diseñadas para preparar a los estudiantes con habilidades prácticas y
+        conocimientos aplicables directamente al mercado laboral, permitiéndoles integrarse rápidamente en sectores
+        técnicos o industriales. Al finalizar, los egresados obtienen el título de técnico en la especialidad elegida.
+      </p>
+    </div>
+
+    <!-- SLIDERS TECNICATURA-->
+    <div class="contenedor">
+
+      <div class="class-sliders class-sliders-tecnicaturas" id="id-slider-tecnicatura"></div>
+
+      <!-- Botones -->
+      <div class="btn-left btn-left-tecnicatura"><i class='bx bxs-left-arrow-circle'></i></div>
+      <div class="btn-right btn-right-tecnicatura"><i class='bx bxs-right-arrow-circle'></i></div>
+
+    </div>
+
+
+    <!-- ! SECCION FORMACION CURSO -->
+    <div class="div-titulo">
+      <h2 class="titulo" id="seccion-curso">Curso</h2>
+    </div>
+
+    <!-- INFO DE QUE ES UNA CURSO -->
+    <div class="div-info-sobre">
+      <p class="info-sobre">
+        Un curso es un programa educativo, generalmente de corta duración, que se enfoca en enseñar conocimientos o
+        habilidades específicas sobre un tema particular. Los cursos pueden variar en formato, desde presenciales hasta
+        en línea, y pueden ser tanto teóricos como prácticos. Al finalizar, los participantes suelen recibir un
+        certificado de asistencia o de aprobación, dependiendo de los objetivos y evaluaciones del curso.
+      </p>
+    </div>
+
+    <!-- SLIDERS CURSO-->
+    <div class="contenedor">
+
+      <div class="class-sliders class-sliders-curso" id="id-slider-curso"></div>
+
+      <!-- Botones -->
+      <div class="btn-left btn-left-curso"><i class='bx bxs-left-arrow-circle'></i></div>
+      <div class="btn-right btn-right-curso"><i class='bx bxs-right-arrow-circle'></i></div>
+
+    </div>
+
+    <box-icon name='up-arrow-circle' type='solid'><i class='bx bxs-up-arrow-circle' id="btn-para-arriba"></i></box-icon>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+
+      <div class="logof">
+        <img src="/image/logo-circular.webp" alt="Sabiduría Digital">
+        <span class="footername">
+          <h2>Sabiduría Digital</h2>
+        </span>
       </div>
-      
-      <!-- INFO DE QUE ES UNA LICENCIATURA -->
-      <div class="div-info-sobre">
-        <p class="info-sobre">
-          Una licenciatura es un programa universitario de 5 a 6 años que ofrece una formación académica sólida en una disciplina específica. Los estudiantes que cursan una licenciatura desarrollan habilidades analíticas, críticas y de investigación, lo que les permite tener una comprensión amplia y sólida de su campo de estudio. Al graduarse, se obtiene el título de Licenciado, lo que permite ejercer la profesión o continuar con estudios de posgrado.
-        </p>
-      </div>
-      
-      <!-- SLIDERS LICENCIATURA-->
-      <div class="contenedor">
-      
-        <div class="class-sliders class-sliders-licenciaturas" id="id-slider-licenciatura"></div>
-  
-        <!-- Botones -->
-        <div class="btn-left btn-left-licenciatura"><i class='bx bxs-left-arrow-circle'></i></div>
-        <div class="btn-right btn-right-licenciatura"><i class='bx bxs-right-arrow-circle' ></i></div>
 
+      <div class="team">
+        <h3>Equipo de trabajo:</h3>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/iara-aylen-sosa/" target="_blank">Sosa Iara</a></li>
+          <li><a href="https://www.linkedin.com/in/camila-belen-alfonso/" target="_blank">Alfonso Camila</a></li>
+          <li><a href="https://www.linkedin.com/in/fabiolaricardo/" target="_blank">Ricardo Fabiola</a></li>
+          <li><a href="https://www.linkedin.com/in/leonel-javier-correa/" target="_blank">Correa Leonel</a></li>
+        </ul>
       </div>
 
-<!-- ! ------------------------------------------------------ -->
-<!-- ! ------------------------------------------------------ -->
-<!-- ! ------------------------------------------------------ -->
-<!-- ! ------------------------------------------------------ -->
-
-
-      <!-- ! SECCION FORMACION TECNICATURA -->
-      <div class="div-titulo">
-        <h2 class="titulo" id="seccion-tecnicatura">Tecnicatura</h2>
-      </div>
-      
-      <!-- INFO DE QUE ES UNA TECNICATURA -->
-      <div class="div-info-sobre">
-        <p class="info-sobre">
-          Una tecnicatura es un programa educativo de nivel terciario que se enfoca en la formación técnica y práctica en un área específica. Su duración es generalmente más corta que la de una carrera universitaria, normalmente entre 2 y 3 años. Las tecnicaturas están diseñadas para preparar a los estudiantes con habilidades prácticas y conocimientos aplicables directamente al mercado laboral, permitiéndoles integrarse rápidamente en sectores técnicos o industriales. Al finalizar, los egresados obtienen el título de técnico en la especialidad elegida.        
-        </p>
-      </div>
-      
-      <!-- SLIDERS TECNICATURA-->
-      <div class="contenedor">
-      
-        <div class="class-sliders class-sliders-tecnicaturas" id="id-slider-tecnicatura"></div>
-  
-        <!-- Botones -->
-        <div class="btn-left btn-left-tecnicatura"><i class='bx bxs-left-arrow-circle'></i></div>
-        <div class="btn-right btn-right-tecnicatura"><i class='bx bxs-right-arrow-circle' ></i></div>
-
+      <div class="social">
+        <h3>Nuestras Redes:</h3>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
       </div>
 
+      <div class="help">
+        <h3>Tu ayuda nos importa!</h3>
 
-      <!-- ! SECCION FORMACION CURSO -->
-      <div class="div-titulo">
-        <h2 class="titulo" id="seccion-curso">Curso</h2>
-      </div>
-      
-      <!-- INFO DE QUE ES UNA CURSO -->
-      <div class="div-info-sobre">
-        <p class="info-sobre">
-          Un curso es un programa educativo, generalmente de corta duración, que se enfoca en enseñar conocimientos o habilidades específicas sobre un tema particular. Los cursos pueden variar en formato, desde presenciales hasta en línea, y pueden ser tanto teóricos como prácticos. Al finalizar, los participantes suelen recibir un certificado de asistencia o de aprobación, dependiendo de los objetivos y evaluaciones del curso.
-        </p>
-      </div>
-      
-      <!-- SLIDERS CURSO-->
-      <div class="contenedor">
-      
-        <div class="class-sliders class-sliders-curso" id="id-slider-curso"></div>
-  
-        <!-- Botones -->
-        <div class="btn-left btn-left-curso"><i class='bx bxs-left-arrow-circle'></i></div>
-        <div class="btn-right btn-right-curso"><i class='bx bxs-right-arrow-circle' ></i></div>
+        <a href="/views/donacion.html" class="btn btn-donation"><i class="fa fa-handshake-o" aria-hidden="true"></i>
+          Donaciones</a>
+
+        <a href="/views/subs.html" class="btn btn-subscribe"><i class="fa fa-bell-o" aria-hidden="true"></i>
+          Suscribite</a>
 
       </div>
+    </div>
 
-      <box-icon name='up-arrow-circle' type='solid' ><i class='bx bxs-up-arrow-circle' id="btn-para-arriba" ></i></box-icon>
-      
-    </main>
+    <div class="derechos-reservados">
+      <p>&copy; 2024 Sabiduría Digital, todos los derechos reservados.</p>
+    </div>
+  </footer>
 
-    <!-- ! FOOTER -->
-    <footer>
-      <div class="footer-container">
-          
-          <div class="logof">
-              <img src="/image/logo-circular.webp" alt="Sabiduría Digital">
-              <span class="footername"><h2>Sabiduría Digital</h2></span>
-          </div>
-          
-          <div class="team">
-              <h3>Equipo de trabajo:</h3>
-              <ul>
-                  <li><a href="https://www.linkedin.com/in/iara-aylen-sosa/" target="_blank">Sosa Iara</a></li>
-                  <li><a href="https://www.linkedin.com/in/camila-belen-alfonso/" target="_blank">Alfonso Camila</a></li>
-                  <li><a href="https://www.linkedin.com/in/fabiolaricardo/" target="_blank">Ricardo Fabiola</a></li>
-                  <li><a href="https://www.linkedin.com/in/leonel-javier-correa/" target="_blank">Correa Leonel</a></li>
-              </ul>
-          </div>
+  <script type="module" src="/javascript/avanzado.js"></script>
+  <script type="module" src="/javascript/navbar.js"></script>
+  <script type="module" src="/javascript/menu.js"></script>
+</body>
 
-          <div class="social">
-              <h3>Nuestras Redes:</h3>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-whatsapp"></i></a>
-              <a href="#"><i class="fab fa-linkedin"></i></a>
-          </div>
-
-          <div class="help">
-              <h3>Tu ayuda nos importa!</h3>
-
-              <a href="donacion.html" class="btn btn-donation" ><i class="fa fa-handshake-o" aria-hidden="true"></i> Donaciones</a>
-
-          
-              <a href="subs.html" class="btn btn-subscribe"><i class="fa fa-bell-o" aria-hidden="true"></i> Suscribite</a>
-              
-          </div>
-          
-      </div>
-
-      <div class="derechos-reservados">
-        <p>&copy; 2024 Sabiduría Digital, todos los derechos reservados.</p>
-      </div>
-    </footer>
-
-    <script type="module" src="/javascript/avanzado.js"></script>
-  </body>
 </html>

@@ -1,538 +1,384 @@
-import '../css/avanzado.css'
+/**
+ * @fileoverview Módulo de formaciones avanzadas
+ * Renderiza sliders de formaciones académicas por categoría (ingeniería, licenciatura, tecnicatura, curso)
+ * Incluye funcionalidad para guardar formaciones si el usuario está autenticado
+ * @author Sabiduría Digital
+ * @version 1.0.0
+ */
 
-import * as infoIngenieria from './info-ingenierias.js'
-import * as infoLicenciatura from './info-licenciaturas.js'
-import * as infoTecnicatura from './info-tecnicatura.js'
-import * as infoCurso from './info-cursos.js'
+// javascript/avanzado.js
 
-window.addEventListener('DOMContentLoaded', function() {
-    
-    const divSlider = document.querySelector('#id-slider-ingenieria')
+import '../css/avanzado.css';
 
-    infoIngenieria.arrayFormacionesIngenieria.forEach(function(dato) {
-        const divSliderSectionIngenieria = document.createElement('div')
-        divSliderSectionIngenieria.classList.add('slider-section-ingenieria')
+// URL base de la API de formaciones obtenida de las variables de entorno
+const API_URL = `${import.meta.env.VITE_API_URL}/formaciones`;
 
-        const nombreDeLaCarreraIngenieria = document.createElement('h3')
-        nombreDeLaCarreraIngenieria.classList.add('titulo-de-la-carrera')
+// ============================================================================
+// FUNCIÓN PRINCIPAL DE RENDERIZADO
+// ============================================================================
 
-        const infoDeLaCarreraIngenieria = document.createElement('p')
-        infoDeLaCarreraIngenieria.classList.add('info-sobre-la-carrera')
+/**
+ * Función reutilizable para renderizar un slider completo de formaciones
+ * Obtiene datos de la API, renderiza las tarjetas y configura la navegación del slider
+ * 
+ * @async
+ * @function renderizarCategoria
+ * @param {string} categoria - El nombre de la categoría (ej. "ingenieria", "licenciatura")
+ * @param {string} sliderSelector - El ID del contenedor del slider (ej. "#id-slider-ingenieria")
+ * @param {string} btnLeftSelector - El selector CSS del botón izquierdo de navegación
+ * @param {string} btnRightSelector - El selector CSS del botón derecho de navegación
+ * @returns {Promise<void>}
+ * 
+ * @example
+ * renderizarCategoria(
+ *     'ingenieria', 
+ *     '#id-slider-ingenieria', 
+ *     '.btn-left-ingenieria', 
+ *     '.btn-right-ingenieria'
+ * );
+ */
+async function renderizarCategoria(categoria, sliderSelector, btnLeftSelector, btnRightSelector) {
 
-        const subTituloCarreraIngenieria = document.createElement('h4')
-        subTituloCarreraIngenieria.classList.add('subtitulo-para-las-facultades')
+    // ========================================================================
+    // VERIFICACIÓN DE AUTENTICACIÓN
+    // ========================================================================
 
-        // console.log(divSliderSecctionIngenieria, nombreDeLaCarreraIngenieria, infoDeLaCarreraIngenieria)
+    /**
+     * Verificar si el usuario está logueado
+     * El token JWT se usa para autenticar peticiones protegidas
+     */
+    const token = localStorage.getItem('token');
 
-        /* asigno la info */
-        nombreDeLaCarreraIngenieria.textContent = dato.titulo_carrera
-        infoDeLaCarreraIngenieria.textContent = dato.informacion_de_la_carrera
-        subTituloCarreraIngenieria.textContent = "Lo podes estudiar en las siguientes instituciones"
+    // ========================================================================
+    // OBTENCIÓN DE DATOS DE LA API
+    // ========================================================================
 
-        divSliderSectionIngenieria.classList.add('slider-section-ingenieria')
+    let formaciones = [];
 
-        // ! Y agrego el contenido al elemento contenedor (slider-section-ingenieria)
-        divSliderSectionIngenieria.appendChild(nombreDeLaCarreraIngenieria)
-        divSliderSectionIngenieria.appendChild(infoDeLaCarreraIngenieria)
-        divSliderSectionIngenieria.appendChild(subTituloCarreraIngenieria)
+    try {
+        /**
+         * Realizar petición GET a la API con filtro por categoría
+         * Query parameter: ?categoria=ingenieria
+         */
+        const response = await fetch(`${API_URL}?categoria=${categoria}`);
 
+        // Validar respuesta del servidor
+        if (!response.ok) throw new Error(`Error al cargar ${categoria}`);
 
-        dato.instituciones.forEach(function(facultad) {
-            // console.log(facultad)
+        // Parsear respuesta JSON
+        formaciones = await response.json();
 
-            const divSliderFacultades = document.createElement('div')
-            divSliderFacultades.classList.add('slider-facultades')
+    } catch (error) {
+        // Registrar error en consola y salir
+        console.error(error);
+        return;
+    }
 
-            const nombreFacultadCarreraIngenieria = document.createElement('a')
-            nombreFacultadCarreraIngenieria.classList.add('nombre-de-la-facultad')
+    // ========================================================================
+    // PREPARACIÓN DEL CONTENEDOR
+    // ========================================================================
 
-            const mensajeCarreraIngenieria = document.createElement('p')
-            mensajeCarreraIngenieria.classList.add('info-sobre-la-facultad')
+    /**
+     * Buscar el contenedor del slider en el DOM
+     */
+    const divSlider = document.querySelector(sliderSelector);
 
-            nombreFacultadCarreraIngenieria.textContent = facultad.nombre_instituto
-            nombreFacultadCarreraIngenieria.href = facultad.url
-            nombreFacultadCarreraIngenieria.target = "_blank"
-            mensajeCarreraIngenieria.textContent = facultad.mensaje
+    // Si no existe el contenedor, salir
+    if (!divSlider) return;
 
-            divSliderFacultades.appendChild(nombreFacultadCarreraIngenieria)
-            divSliderFacultades.appendChild(mensajeCarreraIngenieria)
-            divSliderSectionIngenieria.appendChild(divSliderFacultades)
+    // Limpiar contenido previo del slider
+    divSlider.innerHTML = '';
 
-        })
+    // ========================================================================
+    // RENDERIZADO DE FORMACIONES
+    // ========================================================================
 
-        
-        // ! A nuestro contenedor con el ID 'slider' le agrego cada una de las imagenes
-        divSlider.appendChild(divSliderSectionIngenieria)
+    /**
+     * Iterar sobre cada formación y crear su tarjeta en el slider
+     */
+    formaciones.forEach(dato => {
 
-    })
+        // ====================================================================
+        // CREACIÓN DE LA SECCIÓN DEL SLIDER
+        // ====================================================================
 
-    // ! Agregar eventos al proyecto
+        /**
+         * Crear contenedor principal para cada formación
+         * Cada sección representa una "slide" en el slider
+         */
+        const divSliderSection = document.createElement('div');
+        divSliderSection.classList.add('slider-section', `slider-section-${categoria}`);
 
-    const btnLeft = document.querySelector('.btn-left-ingenieria')
-    const btnRight = document.querySelector('.btn-right-ingenieria')
-    // console.log(btnLeft, btnRight)
+        // ====================================================================
+        // ELEMENTOS DE INFORMACIÓN DE LA FORMACIÓN
+        // ====================================================================
 
-    const sliderSection = document.querySelectorAll('.slider-section-ingenieria')
-    // console.log(sliderSection) // NodeList -> []
+        /**
+         * Crear elemento para el título de la formación
+         */
+        const nombreDeLaCarrera = document.createElement('h3');
+        nombreDeLaCarrera.classList.add('titulo-de-la-carrera');
+        nombreDeLaCarrera.textContent = dato.titulo;
 
-    let operacion = 0
-    let widthInge = 100 / sliderSection.length
-    let counter = 0
-    // console.log(widthInge)
+        /**
+         * Crear elemento para la descripción de la formación
+         */
+        const infoDeLaCarrera = document.createElement('p');
+        infoDeLaCarrera.classList.add('info-sobre-la-carrera');
+        infoDeLaCarrera.textContent = dato.descripcion;
 
+        /**
+         * Crear subtítulo para la lista de instituciones
+         */
+        const subTituloCarrera = document.createElement('h4');
+        subTituloCarrera.classList.add('subtitulo-para-las-facultades');
+        subTituloCarrera.textContent = "Lo podes estudiar en las siguientes instituciones";
+
+        // Añadir elementos al contenedor de la sección
+        divSliderSection.appendChild(nombreDeLaCarrera);
+        divSliderSection.appendChild(infoDeLaCarrera);
+        divSliderSection.appendChild(subTituloCarrera);
+
+        // ====================================================================
+        // BOTÓN GUARDAR FORMACIÓN (Solo para usuarios autenticados)
+        // ====================================================================
+
+        /**
+         * Si el usuario está logueado, mostrar botón para guardar la formación
+         * Permite al usuario agregar esta formación a su lista de guardados
+         */
+        if (token) {
+            /**
+             * Crear botón de guardar
+             */
+            const guardarBtn = document.createElement('button');
+            guardarBtn.textContent = 'Guardar Formación';
+            guardarBtn.classList.add('btn-guardar');
+
+            // Almacenar el ID de la formación en un data attribute
+            guardarBtn.dataset.formacionId = dato._id;
+
+            /**
+             * Manejador de clic para guardar la formación
+             * Realiza petición PUT a la API para agregar a cursos guardados
+             */
+            guardarBtn.addEventListener('click', async (e) => {
+                // Obtener el ID de la formación del data attribute
+                const id = e.target.dataset.formacionId;
+
+                try {
+                    /**
+                     * Realizar petición PUT a la API protegida
+                     * Requiere token de autenticación en el header
+                     */
+                    const response = await fetch(`${import.meta.env.VITE_API_URL}/users/save-course/${id}`, {
+                        method: 'PUT',
+                        headers: {
+                            'Authorization': `Bearer ${token}`
+                        }
+                    });
+
+                    // Validar respuesta
+                    if (!response.ok) throw new Error('Error al guardar');
+
+                    // Actualizar UI: cambiar texto y deshabilitar botón
+                    e.target.textContent = '¡Guardado!';
+                    e.target.disabled = true;
+
+                } catch (error) {
+                    // Mostrar error al usuario
+                    alert(error.message);
+                }
+            });
+
+            // Añadir botón a la sección
+            // divSliderSection.appendChild(guardarBtn);
+        }
+
+        // ====================================================================
+        // RENDERIZADO DE INSTITUCIONES
+        // ====================================================================
+
+        /**
+         * Iterar sobre cada institución donde se puede estudiar la formación
+         * Crear tarjetas para cada institución con nombre, enlace y mensaje
+         */
+        dato.instituciones.forEach(facultad => {
+            /**
+             * Crear contenedor para cada institución
+             */
+            const divSliderFacultades = document.createElement('div');
+            divSliderFacultades.classList.add('slider-facultades');
+
+            /**
+             * Crear enlace al sitio web de la institución
+             */
+            const nombreFacultad = document.createElement('a');
+            nombreFacultad.classList.add('nombre-de-la-facultad');
+            nombreFacultad.textContent = facultad.nombre_instituto;
+            nombreFacultad.href = facultad.url;
+            nombreFacultad.target = "_blank"; // Abrir en nueva pestaña
+
+            /**
+             * Crear elemento para el mensaje/descripción de la institución
+             */
+            const mensajeCarrera = document.createElement('p');
+            mensajeCarrera.classList.add('info-sobre-la-facultad');
+            mensajeCarrera.textContent = facultad.mensaje;
+
+            // Añadir elementos al contenedor de la institución
+            divSliderFacultades.appendChild(nombreFacultad);
+            divSliderFacultades.appendChild(mensajeCarrera);
+
+            // Añadir institución a la sección de la formación
+            divSliderSection.appendChild(divSliderFacultades);
+        });
+
+        // Añadir la sección completa al slider
+        divSlider.appendChild(divSliderSection);
+    });
+
+    // ========================================================================
+    // LÓGICA DE NAVEGACIÓN DEL SLIDER
+    // ========================================================================
+
+    /**
+     * Configurar los botones de navegación izquierda/derecha
+     * Permite al usuario navegar entre las diferentes formaciones
+     */
+    const btnLeft = document.querySelector(btnLeftSelector);
+    const btnRight = document.querySelector(btnRightSelector);
+    const sliderSection = divSlider.querySelectorAll('.slider-section');
+
+    // Validar que existan los botones y las secciones
+    if (!btnLeft || !btnRight || sliderSection.length === 0) return;
+
+    /**
+     * Variables de control del slider
+     */
+    let operacion = 0; // Porcentaje de desplazamiento actual
+    let widthItem = 100 / sliderSection.length; // Ancho de cada slide en porcentaje
+    let counter = 0; // Índice del slide actual
+
+    /**
+     * Función para mover el slider hacia la derecha
+     * Avanza al siguiente slide con animación
+     * 
+     * @function moverALaDerecha
+     * @returns {void}
+     */
     function moverALaDerecha() {
-    
-        if (counter >= sliderSection.length-1) {
-            // console.log('derecha')
-            counter = 0
-            operacion = 0
-            divSlider.style.transform = `translate(-${operacion}%)`
-
+        // Si estamos en el último slide, volver al primero (loop)
+        if (counter >= sliderSection.length - 1) {
+            counter = 0;
+            operacion = 0;
         } else {
-            counter++
-            operacion = operacion + widthInge
-            divSlider.style.transform = `translate(-${operacion}%)`
-            divSlider.style.transition = 'transform ease 1s'
+            // Avanzar al siguiente slide
+            counter++;
+            operacion = operacion + widthItem;
         }
+
+        // Aplicar transformación CSS con animación
+        divSlider.style.transform = `translate(-${operacion}%)`;
+        divSlider.style.transition = 'transform ease 1s';
     }
-        
+
+    /**
+     * Función para mover el slider hacia la izquierda
+     * Retrocede al slide anterior con animación
+     * 
+     * @function moverALaIzquierda
+     * @returns {void}
+     */
     function moverALaIzquierda() {
-        // console.log('izquierda')
-        // debugger
-        counter--
+        counter--;
+
+        // Si estamos en el primer slide, ir al último (loop)
         if (counter < 0) {
-            counter = sliderSection.length-1
-            operacion = widthInge * (sliderSection.length-1)
-            divSlider.style.transform = `translate(-${operacion}%)`
-        } 
-        
-        else if (counter === 0) {
-            operacion = 0
-            divSlider.style.transform = `translate(-${operacion}%)`
-            divSlider.style.transition = 'transform ease 1s'
-        }
-
-        else {
-            // debugger
-            operacion = operacion - widthInge
-            divSlider.style.transform = `translate(-${operacion}%)`
-            divSlider.style.transition = 'transform ease 1s'
-        }
-    }
-
-    btnLeft.addEventListener('click', moverALaIzquierda)
-
-    btnRight.addEventListener('click', moverALaDerecha)
-
-})
-
-// ! ---------------------------------------------------------
-// ! ---------------------------------------------------------
-// ! ---------------------------------------------------------
-// ! ---------------------------------------------------------
-// ! ---------------------------------------------------------
-// ! ---------------------------------------------------------
-// ! ---------------------------------------------------------
-// ! ---------------------------------------------------------
-// ! ---------------------------------------------------------
-// ! ---------------------------------------------------------
-
-
-window.addEventListener('DOMContentLoaded', function() {
-    
-    const divSlider = document.querySelector('#id-slider-licenciatura')
-
-    infoLicenciatura.arrayFormacionLicenciatura.forEach(function(dato) {
-        const divSliderSectionLicenciatura = document.createElement('div')
-        divSliderSectionLicenciatura.classList.add('slider-section-licenciatura')
-
-        const nombreDeLaCarreraLicenciatura = document.createElement('h3')
-        nombreDeLaCarreraLicenciatura.classList.add('titulo-de-la-carrera')
-
-        const infoDeLaCarreraLicenciatura = document.createElement('p')
-        infoDeLaCarreraLicenciatura.classList.add('info-sobre-la-carrera')
-
-        const subtituloCarreraLicenciatura = document.createElement('h4')
-        subtituloCarreraLicenciatura.classList.add('subtitulo-para-las-facultades')
-
-        // console.log(divSliderSecctionIngenieria, nombreDeLaCarreraLicenciatura, infoDeLaCarreraLicenciatura)
-
-        /* asigno la info */
-        nombreDeLaCarreraLicenciatura.textContent = dato.titulo_carrera
-        infoDeLaCarreraLicenciatura.textContent = dato.informacion_de_la_carrera
-        subtituloCarreraLicenciatura.textContent = "Lo podes estudiar en las siguientes instituciones"
-
-        divSliderSectionLicenciatura.classList.add('slider-section-licenciatura')
-
-        // ! Y agrego el contenido al elemento contenedor (slider-section-licenciatura)
-        divSliderSectionLicenciatura.appendChild(nombreDeLaCarreraLicenciatura)
-        divSliderSectionLicenciatura.appendChild(infoDeLaCarreraLicenciatura)
-        divSliderSectionLicenciatura.appendChild(subtituloCarreraLicenciatura)
-
-
-        dato.instituciones.forEach(function(facultad) {
-            // console.log(facultad)
-            
-            const divSliderFacultades = document.createElement('div')
-            divSliderFacultades.classList.add('slider-facultades')
-            
-            const NombreFacultadCarreraLicenciatura = document.createElement('a')
-            NombreFacultadCarreraLicenciatura.classList.add('nombre-de-la-facultad')
-
-            const mensajeCarreraLicenciatura = document.createElement('p')
-            mensajeCarreraLicenciatura.classList.add('info-sobre-la-facultad')
-
-            NombreFacultadCarreraLicenciatura.textContent = facultad.nombre_instituto
-            NombreFacultadCarreraLicenciatura.href = facultad.url
-            NombreFacultadCarreraLicenciatura.target = "_blank"
-            mensajeCarreraLicenciatura.textContent = facultad.mensaje
-
-            divSliderFacultades.appendChild(NombreFacultadCarreraLicenciatura)
-            divSliderFacultades.appendChild(mensajeCarreraLicenciatura)
-
-            divSliderSectionLicenciatura.appendChild(divSliderFacultades)
-
-        })
-
-        
-        // ! A nuestro contenedor con el ID 'slider' le agrego cada una de las imagenes
-        divSlider.appendChild(divSliderSectionLicenciatura)
-
-    })
-
-    // ! Agregar eventos al proyecto
-
-    const btnLeft = document.querySelector('.btn-left-licenciatura')
-    const btnRight = document.querySelector('.btn-right-licenciatura')
-    // console.log(btnLeft, btnRight)
-
-    const sliderSectionLicenciatura = document.querySelectorAll('.slider-section-licenciatura')
-    // console.log(sliderSectionLicenciatura) // NodeList -> []
-
-    let operacion = 0
-    let widthLicenciatura = 100 / sliderSectionLicenciatura.length
-    let counter = 0
-    // console.log(widthLicenciatura)
-
-    function moverALaDerecha() {
-        // debugger
-        if (counter >= sliderSectionLicenciatura.length-1) {
-            // console.log('derecha')
-            counter = 0
-            operacion = 0
-            divSlider.style.transform = `translate(-${operacion}%)`
-
+            counter = sliderSection.length - 1;
+            operacion = widthItem * (sliderSection.length - 1);
         } else {
-            counter++
-            operacion = operacion + widthLicenciatura
-            divSlider.style.transform = `translate(-${operacion}%)`
-            divSlider.style.transition = 'transform ease 1s'
-        }
-    }
-        
-    function moverALaIzquierda() {
-        // console.log('izquierda')
-        // debugger
-        counter--
-        if (counter < 0) {
-            counter = sliderSectionLicenciatura.length-1
-            operacion = widthLicenciatura * (sliderSectionLicenciatura.length-1)
-            divSlider.style.transform = `translate(-${operacion}%)`
-        } 
-        
-        else if (counter === 0) {
-            operacion = 0
-            divSlider.style.transform = `translate(-${operacion}%)`
-            divSlider.style.transition = 'transform ease 1s'
+            // Retroceder al slide anterior
+            operacion = operacion - widthItem;
         }
 
-        else {
-            // debugger
-            operacion = operacion - widthLicenciatura
-            divSlider.style.transform = `translate(-${operacion}%)`
-            divSlider.style.transition = 'transform ease 1s'
-        }
+        // Aplicar transformación CSS con animación
+        divSlider.style.transform = `translate(-${operacion}%)`;
+        divSlider.style.transition = 'transform ease 1s';
     }
 
-    btnLeft.addEventListener('click', moverALaIzquierda)
-
-    btnRight.addEventListener('click', moverALaDerecha)
-
-})
-
-// ! ---------------------------------------------------------
-// ! ---------------------------------------------------------
-// ! ---------------------------------------------------------
-// ! ---------------------------------------------------------
-// ! ---------------------------------------------------------
-// ! ---------------------------------------------------------
-// ! ---------------------------------------------------------
-// ! ---------------------------------------------------------
-// ! ---------------------------------------------------------
-// ! ---------------------------------------------------------
-
-
-window.addEventListener('DOMContentLoaded', function() {
-    
-    const divSlider = document.querySelector('#id-slider-tecnicatura')
-
-    infoTecnicatura.arrayFormacionTecnicatura.forEach(function(dato) {
-        const divSliderSectionTecnicatura = document.createElement('div')
-        divSliderSectionTecnicatura.classList.add('slider-section-tecnicatura')
-
-        const nombreDeLaCarreraTecnicatura = document.createElement('h3')
-        nombreDeLaCarreraTecnicatura.classList.add('titulo-de-la-carrera')
-
-        const infoDeLaCarreraTecnicatura = document.createElement('p')
-        infoDeLaCarreraTecnicatura.classList.add('info-sobre-la-carrera')
-
-        const subtituloCarreraTecnicatura = document.createElement('h4')
-        subtituloCarreraTecnicatura.classList.add('subtitulo-para-las-facultades')
-
-        
-
-
-        // console.log(divSliderSecctionIngenieria, nombreDeLaCarreraTecnicatura, infoDeLaCarreraTecnicatura)
-
-        /* asigno la info */
-        nombreDeLaCarreraTecnicatura.textContent = dato.titulo_carrera
-        infoDeLaCarreraTecnicatura.textContent = dato.informacion_de_la_carrera
-        subtituloCarreraTecnicatura.textContent = "Lo podes estudiar en las siguientes instituciones"
-
-        divSliderSectionTecnicatura.classList.add('slider-section-tecnicatura')
-
-        // ! Y agrego el contenido al elemento contenedor (slider-section-Tecnicatura)
-        divSliderSectionTecnicatura.appendChild(nombreDeLaCarreraTecnicatura)
-        divSliderSectionTecnicatura.appendChild(infoDeLaCarreraTecnicatura)
-        divSliderSectionTecnicatura.appendChild(subtituloCarreraTecnicatura)
-
-
-        dato.instituciones.forEach(function(facultad) {
-            // console.log(facultad)
-            
-            const divSliderFacultades = document.createElement('div')
-            divSliderFacultades.classList.add('slider-facultades')
-
-            const NombreFacultadCarreraTecnicatura = document.createElement('a')
-            NombreFacultadCarreraTecnicatura.classList.add('nombre-de-la-facultad')
-
-            const mensajeCarreraTecnicatura = document.createElement('p')
-            mensajeCarreraTecnicatura.classList.add('info-sobre-la-facultad')
-
-            NombreFacultadCarreraTecnicatura.textContent = facultad.nombre_instituto
-            NombreFacultadCarreraTecnicatura.href = facultad.url
-            NombreFacultadCarreraTecnicatura.target = "_blank"
-            mensajeCarreraTecnicatura.textContent = facultad.mensaje
-
-            divSliderFacultades.appendChild(NombreFacultadCarreraTecnicatura)
-            divSliderFacultades.appendChild(mensajeCarreraTecnicatura)
-
-            divSliderSectionTecnicatura.appendChild(divSliderFacultades)
-
-        })
-
-        
-        // ! A nuestro contenedor con el ID 'slider' le agrego cada una de las imagenes
-        divSlider.appendChild(divSliderSectionTecnicatura)
-
-    })
-
-    // ! Agregar eventos al proyecto
-
-    const btnLeft = document.querySelector('.btn-left-tecnicatura')
-    const btnRight = document.querySelector('.btn-right-tecnicatura')
-    // console.log(btnLeft, btnRight)
-
-    const sliderSectionTecnicatura = document.querySelectorAll('.slider-section-tecnicatura')
-    // console.log(sliderSectionTecnicatura) // NodeList -> []
-
-    let operacion = 0
-    let widthTecnicatura = 100 / sliderSectionTecnicatura.length
-    let counter = 0
-    // console.log(widthTecnicatura)
-
-    function moverALaDerecha() {
-        // debugger
-        if (counter >= sliderSectionTecnicatura.length-1) {
-            // console.log('derecha')
-            counter = 0
-            operacion = 0
-            divSlider.style.transform = `translate(-${operacion}%)`
-
-        } else {
-            counter++
-            operacion = operacion + widthTecnicatura
-            divSlider.style.transform = `translate(-${operacion}%)`
-            divSlider.style.transition = 'transform ease 1s'
-        }
-    }
-        
-    function moverALaIzquierda() {
-        // console.log('izquierda')
-        // debugger
-        counter--
-        if (counter < 0) {
-            counter = sliderSectionTecnicatura.length-1
-            operacion = widthTecnicatura * (sliderSectionTecnicatura.length-1)
-            divSlider.style.transform = `translate(-${operacion}%)`
-        } 
-        
-        else if (counter === 0) {
-            operacion = 0
-            divSlider.style.transform = `translate(-${operacion}%)`
-            divSlider.style.transition = 'transform ease 1s'
-        }
-
-        else {
-            // debugger
-            operacion = operacion - widthTecnicatura
-            divSlider.style.transform = `translate(-${operacion}%)`
-            divSlider.style.transition = 'transform ease 1s'
-        }
-    }
-
-    btnLeft.addEventListener('click', moverALaIzquierda)
-
-    btnRight.addEventListener('click', moverALaDerecha)
-
-})
-
-
-// ! ---------------------------------------------------------
-// ! ---------------------------------------------------------
-// ! ---------------------------------------------------------
-// ! ---------------------------------------------------------
-// ! ---------------------------------------------------------
-// ! ---------------------------------------------------------
-// ! ---------------------------------------------------------
-// ! ---------------------------------------------------------
-// ! ---------------------------------------------------------
-// ! ---------------------------------------------------------
-
-
-window.addEventListener('DOMContentLoaded', function() {
-    
-    const divSlider = document.querySelector('#id-slider-curso')
-
-    infoCurso.arrayFormacionCursos.forEach(function(dato) {
-        const divSliderSectionCurso = document.createElement('div')
-        divSliderSectionCurso.classList.add('slider-section-curso')
-
-        const nombreDeLaCarreraCurso = document.createElement('h3')
-        nombreDeLaCarreraCurso.classList.add('titulo-de-la-carrera')
-
-        const infoDeLaCarreraCurso = document.createElement('p')
-        infoDeLaCarreraCurso.classList.add('info-sobre-la-carrera')
-
-        const subtituloCarreraCurso = document.createElement('h4')
-        subtituloCarreraCurso.classList.add('subtitulo-para-las-facultades')
-
-        // console.log(divSliderSecctionIngenieria, nombreDeLaCarreraCurso, infoDeLaCarreraCurso)
-
-        /* asigno la info */
-        nombreDeLaCarreraCurso.textContent = dato.titulo_carrera
-        infoDeLaCarreraCurso.textContent = dato.informacion_de_la_carrera
-        subtituloCarreraCurso.textContent = "Lo podes estudiar en las siguientes instituciones"
-
-        divSliderSectionCurso.classList.add('slider-section-curso')
-
-        // ! Y agrego el contenido al elemento contenedor (slider-section-Curso)
-        divSliderSectionCurso.appendChild(nombreDeLaCarreraCurso)
-        divSliderSectionCurso.appendChild(infoDeLaCarreraCurso)
-        divSliderSectionCurso.appendChild(subtituloCarreraCurso)
-
-
-        dato.instituciones.forEach(function(facultad) {
-            // console.log(facultad)
-            
-            const divSliderFacultades = document.createElement('div')
-            divSliderFacultades.classList.add('slider-facultades')
-
-            const NombreFacultadCarreraCurso = document.createElement('a')
-            NombreFacultadCarreraCurso.classList.add('nombre-de-la-facultad')
-
-            const mensajeCarreraCurso = document.createElement('p')
-            mensajeCarreraCurso.classList.add('info-sobre-la-facultad')
-
-            NombreFacultadCarreraCurso.textContent = facultad.nombre_instituto
-            NombreFacultadCarreraCurso.href = facultad.url
-            NombreFacultadCarreraCurso.target = "_blank"
-            mensajeCarreraCurso.textContent = facultad.mensaje
-
-            divSliderFacultades.appendChild(NombreFacultadCarreraCurso)
-            divSliderFacultades.appendChild(mensajeCarreraCurso)
-
-            divSliderSectionCurso.appendChild(divSliderFacultades)
-
-        })
-
-        
-        // ! A nuestro contenedor con el ID 'slider' le agrego cada una de las imagenes
-        divSlider.appendChild(divSliderSectionCurso)
-
-    })
-
-    // ! Agregar eventos al proyecto
-
-    const btnLeft = document.querySelector('.btn-left-curso')
-    const btnRight = document.querySelector('.btn-right-curso')
-    // console.log(btnLeft, btnRight)
-
-    const sliderSectionCurso = document.querySelectorAll('.slider-section-curso')
-    // console.log(sliderSectionCurso) // NodeList -> []
-
-    let operacion = 0
-    let widthCurso = 100 / sliderSectionCurso.length
-    let counter = 0
-    // console.log(widthCurso)
-
-    function moverALaDerecha() {
-        // debugger
-        if (counter >= sliderSectionCurso.length-1) {
-            // console.log('derecha')
-            counter = 0
-            operacion = 0
-            divSlider.style.transform = `translate(-${operacion}%)`
-
-        } else {
-            counter++
-            operacion = operacion + widthCurso
-            divSlider.style.transform = `translate(-${operacion}%)`
-            divSlider.style.transition = 'transform ease 1s'
-        }
-    }
-        
-    function moverALaIzquierda() {
-        // console.log('izquierda')
-        // debugger
-        counter--
-        if (counter < 0) {
-            counter = sliderSectionCurso.length-1
-            operacion = widthCurso * (sliderSectionCurso.length-1)
-            divSlider.style.transform = `translate(-${operacion}%)`
-        } 
-        
-        else if (counter === 0) {
-            operacion = 0
-            divSlider.style.transform = `translate(-${operacion}%)`
-            divSlider.style.transition = 'transform ease 1s'
-        }
-
-        else {
-            // debugger
-            operacion = operacion - widthCurso
-            divSlider.style.transform = `translate(-${operacion}%)`
-            divSlider.style.transition = 'transform ease 1s'
-        }
-    }
-
-    btnLeft.addEventListener('click', moverALaIzquierda)
-
-    btnRight.addEventListener('click', moverALaDerecha)
-
-})
-
-/* BOTON PARA VOLVER AL PRINCIPIO DE LA PAGINA - UBICADO EN LA PARTE INFERIOR DERECHA */
-document.getElementById('btn-para-arriba').addEventListener('click', function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Asignar event listeners a los botones de navegación
+    btnLeft.addEventListener('click', moverALaIzquierda);
+    btnRight.addEventListener('click', moverALaDerecha);
+}
+
+
+// ============================================================================
+// INICIALIZACIÓN DE LA APLICACIÓN
+// ============================================================================
+
+/**
+ * Event listener que se ejecuta cuando el DOM está completamente cargado
+ * Inicializa todos los sliders de formaciones y funcionalidades adicionales
+ */
+window.addEventListener('DOMContentLoaded', function () {
+
+    // ========================================================================
+    // RENDERIZADO DE SLIDERS POR CATEGORÍA
+    // ========================================================================
+
+    /**
+     * Renderizar slider de Ingenierías
+     */
+    renderizarCategoria(
+        'ingenieria',
+        '#id-slider-ingenieria',
+        '.btn-left-ingenieria',
+        '.btn-right-ingenieria'
+    );
+
+    /**
+     * Renderizar slider de Licenciaturas
+     */
+    renderizarCategoria(
+        'licenciatura',
+        '#id-slider-licenciatura',
+        '.btn-left-licenciatura',
+        '.btn-right-licenciatura'
+    );
+
+    /**
+     * Renderizar slider de Tecnicaturas
+     */
+    renderizarCategoria(
+        'tecnicatura',
+        '#id-slider-tecnicatura',
+        '.btn-left-tecnicatura',
+        '.btn-right-tecnicatura'
+    );
+
+    /**
+     * Renderizar slider de Cursos
+     */
+    renderizarCategoria(
+        'curso',
+        '#id-slider-curso',
+        '.btn-left-curso',
+        '.btn-right-curso'
+    );
+
+    // ========================================================================
+    // FUNCIONALIDAD DE SCROLL TO TOP
+    // ========================================================================
+
+    /**
+     * Botón para volver al inicio de la página
+     * Implementa scroll suave (smooth scrolling)
+     */
+    document.getElementById('btn-para-arriba').addEventListener('click', function () {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
 });

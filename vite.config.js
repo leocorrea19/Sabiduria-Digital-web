@@ -18,7 +18,8 @@ export default {
                 principiantes: resolve('views/principiantes.html'),
                 sesion: resolve('views/sesion.html'),
                 subs: resolve('views/subs.html'),
-                inicio: resolve('index.html')
+                inicio: resolve('index.html'),
+                perfil: resolve('views/perfil.html')
             }
         }
     }

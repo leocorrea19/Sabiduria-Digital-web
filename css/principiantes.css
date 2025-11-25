@@ -12,6 +12,8 @@
     --colorBody: #ddf6ff;
     --colorBotones: #f0a73a;
     --colorPalabras: #1f628e;
+
+    --altura-del-navbar: 0rem; /* Ejemplo: si tu navbar mide 64px */
 }
 
 * {
@@ -59,15 +61,14 @@ body {
 
 header {
     background-color: var(--colorPincipal); /* Color de fondo del nav */
-    padding: 5px 10px; /* Reduce el padding para hacer el nav más delgado */
     position: relative;
     z-index: 1;
-    height: 5rem; /* Ajusta la altura para que el nav no se vea tan ancho */
+    height: 70%; /* Ajusta la altura para que el nav no se vea tan ancho */
 }
 
     .navbar {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         height: auto;
     }
@@ -75,10 +76,9 @@ header {
         .navbar .logo {
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             z-index: 10; /* Asegura que el logo esté por encima del nav */
-            height: 50%;
-            width: 50%;
+            
         }
 
             .navbar .logo img {
@@ -95,34 +95,59 @@ header {
                 transition: 0.25s;
             }
 
+/* Vuelvo invisle el boton de cursos para la version mobile */
+.curso-invisible {
+    display: none;
+}
 
-        .navbar nav {
-            display: flex;
-        }
+/* Mostrar el botón de hamburguesa */
+.hamburger-menu {
+    display: block;
+    z-index: 10000;
+    transition: all 1s ease-in-out; /* Animación de despliegue */
+}
 
-        .navbar nav a {
-            color: var(--colorBody); /* Color del texto del botón */
-            padding: 2px 5px; /* Espaciado interno del botón */
-            /* border-radius: 10px; */
-            margin: 5px 2px; /* Espacio entre los botones */
-            font-size: .8em; /* Tamaño de las letras */
-            font-weight: bold; /* Aplica negrita al texto del botón */
-            text-align: center; /* Centra el texto dentro del botón */
-            transition: 1s;  /* Transición suave para el color de fondo */
-        }
+/* Estilos para el menú desplegable en pantallas pequeñas */
+.nav-links {
+    display: flex; /* Para que los enlaces se muestren horizontalmente en escritorio */
+    gap: 1.5rem; /* Espacio entre los enlaces */
+    transition: all 1s ease-in-out; /* Animación de despliegue */
+}
 
-            .navbar .login{
-                display: inline-block;
-                background-color: var(--colorPalabras);
-                border-radius: 5px ;
-                color: var(--colorBody);
-                padding: 5px 5px;
-                margin: 0 2px;
-                font-weight: bold;
-                text-align: center;
-                transition: 1s;  /* Transición suave para el color de fondo */
-                height: 1.4rem;
-            }
+/* Ocultar la navegación por defecto en móvil */
+.nav-links {
+    display: none; /* Oculta el menú inicialmente */
+    flex-direction: column; /* Apila los enlaces verticalmente */
+    position: absolute;
+    top: var(--altura-del-navbar); /* Ajusta esto según la altura de tu navbar */
+    right: 0;
+    width: 70%; /* Ancho del menú desplegable */
+    height: calc(100vh - var(--altura-del-navbar)); /* Ocupa el resto de la altura */
+    background-color: var(--colorPalabras); /* Un fondo para el menú */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.599);
+    padding: 2rem 1rem 1rem 1rem;
+    z-index: 1000;
+    align-items: flex-start; /* Alinea los enlaces a la izquierda */
+}
+
+    /* Cuando el menú está activo (abierto) */
+    .nav-links.active {
+        display: flex; /* Muestra el menú */
+    }
+
+    .nav-links a {
+        width: 60%;
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid var(--colorBotones);
+        text-align: left;
+        color: var(--colorBackground);
+    }
+
+/* Ajusta el logo y el botón de hamburguesa dentro del navbar */
+.navbar {
+    justify-content: space-between; /* El logo a la izquierda, hamburguesa a la derecha */
+    padding: 0.8rem 1.5rem; /* Ajusta el padding del navbar */
+}
 
 /* ! FOOTER */
 footer {
@@ -334,6 +359,45 @@ footer {
     }
 
 @media screen and (min-width: 1200px) {
+    
+    /* Por defecto, el botón de hamburguesa está oculto */
+    .hamburger-menu {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 2.5rem; /* Ajusta el tamaño del icono */
+        color: var(--color-texto-oscuro); /* O el color que uses para el icono */
+        cursor: pointer;
+        padding: 0.5rem;
+    }
+
+        /* Ocultar el icono "x" por defecto (si lo usas para cerrar) */
+        .hamburger-menu .bx-x {
+            display: none;
+        }
+
+    .nav-links {
+        display: flex; 
+        flex-direction: row;
+        align-items: center;
+        gap: 1.5rem; /* Espacio entre enlaces */
+    
+        /* Reseteamos cualquier estilo de móvil */
+        position: static;
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        box-shadow: none;
+        padding: 0;
+    }
+    
+        .nav-links a {
+            width: auto;
+            padding: 0;
+            border-bottom: none;
+            text-align: left;
+        }
+    
     header {
         background-color: var(--colorPincipal); /* Color de fondo del nav */
         padding: 10px 20px; /* Reduce el padding para hacer el nav más delgado */

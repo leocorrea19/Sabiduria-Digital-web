@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Sabiduría Digital</title>
+    <title>Foro - Sabiduría Digital</title>
 
     <link rel="stylesheet" href="/css/foro.css">
 
@@ -17,21 +18,27 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
+
 <body>
 
     <div class="container-maestro">
         <!-- Barra de navegacion -->
         <header>
             <div class="navbar">
-                <a href="/index.html" class="logo">
+                <a href="index.html" class="logo">
                     <img src="/image/logo-circular.webp" alt="Logo de Sabiduría Digital">
                     <span>Sabiduría Digital</span>
                 </a>
-                <nav>
+
+                <div class="hamburger-menu" id="hamburger-menu">
+                    <i class='bx  bx-menu bx-sm' style='color:#ace1f5'></i>
+                </div>
+
+                <nav class="nav-links" id="nav-links">
                     <a href="/index.html">Inicio</a>
-                    <a href="foro.html">Foro</a>
-                    <a href="sesion.html" id="loginBtn" class="login">Iniciar Sesión</a>
-                    <a href="sesion.html" id="registerBtn" class="login">Registrarse</a>
+                    <a href="foro.html" class="estoy-aqui">Foro</a>
+                    <a href="/views/sesion.html" id="loginBtn" class="login">Iniciar Sesión</a>
+                    <a href="/views/sesion.html" id="registerBtn" class="login">Registrarse</a>
                 </nav>
             </div>
         </header>
@@ -49,15 +56,18 @@
                     <div class="opinion-contenido">
 
                         <h3>Julieta J.</h3>
-                        <p>Ejemplo de opinión del usuario. Esta página me sirvió mucho para entender mis opciones de carrera
-                            y ahora empecé una tecnicatura en programación, luego de hacer un curso introductorio y gratuito
+                        <p>Ejemplo de opinión del usuario. Esta página me sirvió mucho para entender mis opciones de
+                            carrera
+                            y ahora empecé una tecnicatura en programación, luego de hacer un curso introductorio y
+                            gratuito
                             que me recomendaron acá.
                         </p>
                         <div class="fecha-linkedin-clasificacion">
 
                             <span class="fecha">Fecha: 23/08/2024</span>
 
-                            <a href="https://linkedin.com/in/usuario1" target="_blank"><i class='bx bxl-linkedin-square bx-sm' ></i> LinkedIn.</a>
+                            <a href="https://linkedin.com/in/usuario1" target="_blank"><i
+                                    class='bx bxl-linkedin-square bx-sm'></i> LinkedIn.</a>
 
                             <div class="clasificacion">
                                 <i class='bx bx-brain bx-sm' style='color:#f0a73a'></i>
@@ -78,15 +88,18 @@
                     <div class="opinion-contenido">
 
                         <h3>Ramiro R.</h3>
-                        <p>Ejemplo de opinión del usuario. Esta página me sirvió mucho para entender mis opciones de carrera
-                            y ahora empecé una tecnicatura en programación, luego de hacer un curso introductorio y gratuito
+                        <p>Ejemplo de opinión del usuario. Esta página me sirvió mucho para entender mis opciones de
+                            carrera
+                            y ahora empecé una tecnicatura en programación, luego de hacer un curso introductorio y
+                            gratuito
                             que me recomendaron acá.
                         </p>
                         <div class="fecha-linkedin-clasificacion">
 
                             <span class="fecha">Fecha: 23/08/2024</span>
 
-                            <a href="https://linkedin.com/in/usuario2" target="_blank"><i class='bx bxl-linkedin-square bx-sm' ></i> LinkedIn.</a>
+                            <a href="https://linkedin.com/in/usuario2" target="_blank"><i
+                                    class='bx bxl-linkedin-square bx-sm'></i> LinkedIn.</a>
 
                             <div class="clasificacion">
                                 <i class='bx bx-brain bx-sm' style='color:#f0a73a'></i>
@@ -108,15 +121,18 @@
                     <div class="opinion-contenido">
 
                         <h3>Belén B.</h3>
-                        <p>Ejemplo de opinión del usuario. Esta página me sirvió mucho para entender mis opciones de carrera
-                            y ahora empecé una tecnicatura en programación, luego de hacer un curso introductorio y gratuito
+                        <p>Ejemplo de opinión del usuario. Esta página me sirvió mucho para entender mis opciones de
+                            carrera
+                            y ahora empecé una tecnicatura en programación, luego de hacer un curso introductorio y
+                            gratuito
                             que me recomendaron acá.
                         </p>
                         <div class="fecha-linkedin-clasificacion">
 
                             <span class="fecha">Fecha: 23/08/2024</span>
 
-                            <a href="https://linkedin.com/in/usuario3" target="_blank"><i class='bx bxl-linkedin-square bx-sm'></i> LinkedIn.</a>
+                            <a href="https://linkedin.com/in/usuario3" target="_blank"><i
+                                    class='bx bxl-linkedin-square bx-sm'></i> LinkedIn.</a>
 
                             <div class="clasificacion">
                                 <i class='bx bx-brain bx-sm' style='color:#f0a73a'></i>
@@ -130,64 +146,69 @@
                     </div>
                 </div>
 
-                    <!-- Añade más tarjetas de opiniones aquí -->
+                <!-- Añade más tarjetas de opiniones aquí -->
 
             </section>
 
 
-        <!-- Contenedor para centrar el botón y el formulario -->
+            <!-- Contenedor para centrar el botón y el formulario -->
             <div class="contenedor-opinion">
-            <button class="agregar-opinion"><strong>¡Dejanos tus comentarios!</strong></button>
+                <button class="agregar-opinion"><strong>¡Dejanos tus comentarios!</strong></button>
 
-            <!-- Formulario para añadir opiniones -->
-            <div id="formulario-opinion">
-                <form id="nueva-opinion-form">
-                    <!-- <label for="nombre">Tu nombre:</label>
+                <!-- Formulario para añadir opiniones -->
+                <div id="formulario-opinion">
+                    <form id="nueva-opinion-form">
+                        <!-- <label for="nombre">Tu nombre:</label>
                     <input type="text" id="nombre" required> <br></br>
 
                     <label for="linkedin">Tu LinkedIn: (opcional)</label>
                     <input type="url" id="linkedin"><br></br> -->
 
-                    <label for="opinion">Tus comentarios:</label>
-                    <textarea id="opinion" required></textarea><br></br>
+                        <label for="opinion">Tus comentarios:</label>
+                        <textarea id="opinion" required></textarea><br></br>
 
-                    <label for="clasificacion">¿Cómo calificarías nuestra página?</label>
-                    <div class="container-seleccion-clasificacion">
-                        <i class='bx bx-brain bx-md clasificacion-ingreso' id="clasificacion-1"></i>
-                        <i class='bx bx-brain bx-md clasificacion-ingreso' id="clasificacion-2"></i>
-                        <i class='bx bx-brain bx-md clasificacion-ingreso' id="clasificacion-3"></i>
-                        <i class='bx bx-brain bx-md clasificacion-ingreso' id="clasificacion-4"></i>
-                        <i class='bx bx-brain bx-md clasificacion-ingreso' id="clasificacion-5"></i>
-                    </div>
+                        <label for="clasificacion">¿Cómo calificarías nuestra página?</label>
+                        <div class="container-seleccion-clasificacion">
+                            <i class='bx bx-brain bx-md clasificacion-ingreso' id="clasificacion-1"></i>
+                            <i class='bx bx-brain bx-md clasificacion-ingreso' id="clasificacion-2"></i>
+                            <i class='bx bx-brain bx-md clasificacion-ingreso' id="clasificacion-3"></i>
+                            <i class='bx bx-brain bx-md clasificacion-ingreso' id="clasificacion-4"></i>
+                            <i class='bx bx-brain bx-md clasificacion-ingreso' id="clasificacion-5"></i>
+                        </div>
 
-                    <div>
-                        <button type="submit"><strong>Enviar Opinión</strong></button>
+                        <div>
+                            <button type="submit"><strong>Enviar Opinión</strong></button>
 
-                        <button type="submit" class="cancelar"><strong >Cancelar</strong></button>
-                    </div>
+                            <button type="submit" class="cancelar"><strong>Cancelar</strong></button>
+                        </div>
 
-                </form>
-            </div>
+                    </form>
+                </div>
             </div>
 
         </main>
 
-            <!-- FOOTER -->
-            <footer>
+        <!-- FOOTER -->
+        <footer>
             <div class="footer-container">
 
                 <div class="logof">
                     <img src="/image/logo-circular.webp" alt="Sabiduría Digital">
-                    <span class="footername"><h2>Sabiduría Digital</h2></span>
+                    <span class="footername">
+                        <h2>Sabiduría Digital</h2>
+                    </span>
                 </div>
 
                 <div class="team">
                     <h3>Equipo de trabajo:</h3>
                     <ul>
                         <li><a href="https://www.linkedin.com/in/iara-aylen-sosa/" target="_blank">Sosa Iara</a></li>
-                        <li><a href="https://www.linkedin.com/in/camila-belen-alfonso/" target="_blank">Alfonso Camila</a></li>
-                        <li><a href="https://www.linkedin.com/in/fabiolaricardo/" target="_blank">Ricardo Fabiola</a></li>
-                        <li><a href="https://www.linkedin.com/in/leonel-javier-correa/" target="_blank">Correa Leonel</a></li>
+                        <li><a href="https://www.linkedin.com/in/camila-belen-alfonso/" target="_blank">Alfonso
+                                Camila</a></li>
+                        <li><a href="https://www.linkedin.com/in/fabiolaricardo/" target="_blank">Ricardo Fabiola</a>
+                        </li>
+                        <li><a href="https://www.linkedin.com/in/leonel-javier-correa/" target="_blank">Correa
+                                Leonel</a></li>
                     </ul>
                 </div>
 
@@ -201,10 +222,12 @@
                 <div class="help">
                     <h3>Tu ayuda nos importa!</h3>
 
-                    <a href="donacion.html" class="btn btn-donation" ><i class="fa fa-handshake-o" aria-hidden="true"></i> Donaciones</a>
+                    <a href="/views/donacion.html" class="btn btn-donation"><i class="fa fa-handshake-o"
+                            aria-hidden="true"></i> Donaciones</a>
 
 
-                    <a href="subs.html" class="btn btn-subscribe"><i class="fa fa-bell-o" aria-hidden="true"></i> Suscribite</a>
+                    <a href="/views/subs.html" class="btn btn-subscribe"><i class="fa fa-bell-o" aria-hidden="true"></i>
+                        Suscribite</a>
 
                 </div>
 
@@ -219,7 +242,8 @@
 
     <!-- <script type="module" src="/javascript/main.js"></script> -->
     <script type="module" src="/javascript/foro.js"></script>
+    <script type="module" src="/javascript/navbar.js"></script>
+    <script type="module" src="/javascript/menu.js"></script>
 </body>
 
-</body>
 </html>

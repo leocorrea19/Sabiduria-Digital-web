@@ -1,13 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Perfil - Sabiduría Digital</title>
 
-    <title>Donación - Sabiduría Digital</title>
-
-    <link rel="stylesheet" href="/css/donacion.css">
+    <link rel="stylesheet" href="/css/perfil.css">
 
     <link rel="icon" type="image/webp" href="/image/logo-para-ventana.webp">
 
@@ -25,7 +24,7 @@
         <!-- Barra de navegacion -->
         <header>
             <div class="navbar">
-                <a href="index.html" class="logo">
+                <a href="/index.html" class="logo">
                     <img src="/image/logo-circular.webp" alt="Logo de Sabiduría Digital">
                     <span>Sabiduría Digital</span>
                 </a>
@@ -36,50 +35,29 @@
 
                 <nav class="nav-links" id="nav-links">
                     <a href="/index.html">Inicio</a>
-                    <a href="foro.html">Foro</a>
+                    <a href="/views/foro.html">Foro</a>
                     <a href="/views/sesion.html" id="loginBtn" class="login">Iniciar Sesión</a>
                     <a href="/views/sesion.html" id="registerBtn" class="login">Registrarse</a>
                 </nav>
             </div>
         </header>
 
-        <!-- SECCIÓN DONACIONES -->
         <main>
-            <h2 class="titulo-seccion">Donaciones.</h2>
-
-            <div class="tarjetas-container">
-
-                <!-- Tarjeta Donación-->
-                <div class="tarjeta" id="tarjeta-donacion">
-                    <h2 class="titulo-tarjeta">¡Ayudanos a seguir compartiendo información educativa!</h2>
-                    <p>¿Para qué nos sirven las donaciones al sitio?</p>
-                    <ul>
-                        <li><i class='bx bxs-check-circle' style='color:#f0a73a'></i> Mantener el sitio actualizado.
-                        </li>
-                        <li><i class='bx bxs-check-circle' style='color:#f0a73a'></i> Mantener nuestra base de datos con
-                            toda la información para tu formación.</li>
-                        <li><i class='bx bxs-check-circle' style='color:#f0a73a'></i> También somos un grupo de
-                            estudiantes dedicados a la programación.</li>
-                    </ul>
-                </div>
+            <p>En desarrollo.</p>
+            <!-- <div class="contenedor-tipo-formaciones">
+                <h2 class="titulo-tipos-de-formacion">Mis Formaciones Guardadas</h2>
             </div>
 
-            <div class="formulario-pago" id="formulario-pago">
-                <h2>Escanea el QR y hace tu aporte a través de Mercado Pago (Monto a elección)</h2>
-                <img src="/image/qr-donacion.webp" alt="QR a Mercado Pago" class="qr-donacion">
-            </div>
+            <div id="saved-courses-container" class="lista-de-formaciones-guardadas">
+            </div> -->
         </main>
 
-
-        <!-- FOOTER -->
         <footer>
             <div class="footer-container">
 
                 <div class="logof">
                     <img src="/image/logo-circular.webp" alt="Sabiduría Digital">
-                    <span class="footername">
-                        <h2>Sabiduría Digital</h2>
-                    </span>
+                    <h2 class="footername">Sabiduría Digital</h2>
                 </div>
 
                 <div class="team">
@@ -103,7 +81,7 @@
                 </div>
 
                 <div class="help">
-                    <h3>Tu ayuda nos importa!</h3>
+                    <h3>¡Tu ayuda importa!</h3>
 
                     <a href="/views/donacion.html" class="btn btn-donation"><i class="fa fa-handshake-o"
                             aria-hidden="true"></i> Donaciones</a>
@@ -122,9 +100,8 @@
         </footer>
     </div>
 
-    <!-- <script type="module" src="../javascript/main.js"></script> -->
-    <script type="module" src="/javascript/donacion.js"></script>
     <script type="module" src="/javascript/navbar.js"></script>
+    <script type="module" src="/javascript/perfil.js"></script>
     <script type="module" src="/javascript/menu.js"></script>
 </body>
 

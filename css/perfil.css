@@ -1,4 +1,5 @@
-/* Estilos para la sección de donaciones y suscripciones */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
 :root {
     --colorPincipal: #004369; /* variables css */
     --colorBackground: #ace1f5;
@@ -17,18 +18,16 @@
     scroll-behavior: smooth;
 }
 
-body {
-    font-family: "Josefin Sans", sans-serif;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: var(--colorBody);
-}
-
 a {
     text-decoration: none;
 }
 
 ul {
     list-style: none;
+}
+
+img {
+    width: 100%;
 }
 
 /* ! ------------------------------------------ */
@@ -42,14 +41,15 @@ ul {
     font-style: normal;
 }
 
+
 /* Aplica la fuente a todo el documento */
 body {
     font-family: 'ITC Franklin Gothic LT', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #ddf6ff; /* Fondo general de la página */
-    color: #1f628e;
+    background-color: var(--colorBody); /* Fondo general de la página */
+    color: var(--colorPalabras);
 }
 
 .container-maestro {
@@ -140,6 +140,13 @@ header {
         border-bottom: 1px solid var(--colorBotones);
         text-align: left;
         color: var(--colorBackground);
+    }
+    .nav-links .estoy-aqui {
+        border-bottom: 0;
+        border-radius: 20px 0 20px 0;
+        background-color: var(--colorBotones);
+        color: var(--colorPalabras);
+        font-weight: 800;
     }
 
 /* Ajusta el logo y el botón de hamburguesa dentro del navbar */
@@ -240,90 +247,13 @@ footer {
         font-size: 1em;
     }
 
-/* !MAIN */
-
-.titulo-seccion {
-    color: var(--colorPalabras);
-    text-align: center;
-    padding: 10px;
-    padding-right: 20px;
-    margin-top: 60px;
-    font-size: 1.5em;
-    background-color: var(--colorBotones);
-    border-radius: 0 50px 50px 0;
-    display: inline-block;
-}
-
-.tarjetas-container {
-    display: flex; /*para alinear las tarjetas en filas*/
-    justify-content: center; /*centrar las tarjetas en el contenedor*/
-    align-items: flex-start; /*alínea las tajetas en la parte superior*/
-    padding: 40px 0; /*espacio arriba y abajo del contenedor*/
-    margin-bottom: 4em;
-}
-
-    .tarjeta {
-        background-color: var(--colorBackground); /* Color claro de la paleta */
-        border: 2px solid var(--colorPalabras); /* Color azul oscuro de la paleta */
-        border-radius: 10px;
-        padding: 20px;
-        width: 80%;
-        height: auto;
-        text-align: center;
-        cursor: pointer;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-        .tarjeta .titulo-tarjeta {
-            color: var(--colorPalabras);
-            margin-bottom: 10px;
-            font-size: 1.2em;
-        }
-
-        .tarjeta p {
-            color: var(--colorPalabras);
-            font-weight: 600;
-            font-size: .9em;
-            padding-top: 15px;
-        }
-
-        .tarjeta li {
-            padding-top: 20px;
-            font-size: .9em;
-        }
-
-/* Estilos para el formulario de pago */
-.formulario-pago {
-    display: none; /* Oculto por defecto */
-    background-color: var(--colorBackground);
-    border: 2px solid var(--colorPincipal);
-    border-radius: 10px;
-    padding: 20px;
-    max-width: 360px;
-    margin: 20px auto 60px auto;
-    box-shadow: -10px 10px 27px -3px rgba(0,0,0,0.74);
-    -webkit-box-shadow: -10px 10px 27px -3px rgba(0,0,0,0.74);
-    -moz-box-shadow: -10px 10px 27px -3px rgba(0,0,0,0.74);
-}
-
-    .formulario-pago h2 {
-        color: var(--colorPalabras);
-        margin-bottom: 15px;
-        font-size: 1.2em;
-    }
-
-    .formulario-pago .qr-donacion {
-        border-radius: 8%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        align-content: center;
-        width: 100%;
-        padding: 5%;
-    }
+/* ! ------------------------------------- */
+/* ! ------------------------------------- */
+/* ! ------------------------------------- */
+/* ! ------------------------------------- */
 
 @media screen and (min-width: 1200px) {
-    
+
     /* Por defecto, el botón de hamburguesa está oculto */
     .hamburger-menu {
         display: none;
@@ -361,13 +291,14 @@ footer {
             border-bottom: none;
             text-align: left;
         }
-    
+        
+
     header {
         background-color: var(--colorPincipal); /* Color de fondo del nav */
-        padding: 10px 20px; /* Reduce el padding para hacer el nav más delgado */
+        padding: 0; /* Reduce el padding para hacer el nav más delgado */
         position: relative;
         z-index: 1;
-        height: 90px; /* Ajusta la altura para que el nav no se vea tan ancho */
+        height: 50%; /* Ajusta la altura para que el nav no se vea tan ancho */
     }
 
         .navbar {
@@ -436,6 +367,14 @@ footer {
                 .navbar nav a:hover {
                     box-shadow: inset 0 -3rem 0 0 var(--colorBotones); /* Color de fondo al pasar el ratón sobre el botón, se rellena de abajo para arriba */
                     color: black; /* se cambia el color de la letra a negro para que sea mas legible */
+                }
+                
+                .nav-links .estoy-aqui {
+                    border-bottom: 0;
+                    border-radius: 20px 0 20px 0;
+                    background-color: var(--colorBotones);
+                    color: var(--colorPalabras);
+                    font-weight: 800;
                 }
 
     /* ! FOOTER */
@@ -539,97 +478,4 @@ footer {
             color: var(--colorBotones);
             font-size: 1em;
         }
-    
-    /* ! ----------------------------------------- */
-    /* ! ----------------------------------------- */
-    /* ! ----------------------------------------- */
-
-    /* ! MAIN */
-    .titulo-seccion {
-        color: var(--colorPalabras);
-        text-align: center;
-        padding: 15px;
-        padding-right: 40px;
-        margin-top: 80px;
-        font-size: 2.5em;
-        background-color: var(--colorBotones);
-        border-radius: 0 50px 50px 0;
-        display: inline-block;
-    }
-
-    .tarjetas-container {
-        display: flex; /*para alinear las tarjetas en filas*/
-        justify-content: center; /*centrar las tarjetas en el contenedor*/
-        align-items: flex-start; /*alínea las tajetas en la parte superior*/
-        padding: 40px 0; /*espacio arriba y abajo del contenedor*/
-        margin-bottom: 4em;
-    }
-
-        .tarjeta {
-            background-color: var(--colorBackground); /* Color claro de la paleta */
-            border: 2px solid var(--colorPalabras); /* Color azul oscuro de la paleta */
-            border-radius: 10px;
-            padding: 20px;
-            width: 500px;
-            height: auto;
-            text-align: center;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .tarjeta:hover {
-            transform: scale(1.05);
-            box-shadow: -10px 10px 27px -3px rgba(0,0,0,0.74);
-            -webkit-box-shadow: -10px 10px 27px -3px rgba(0,0,0,0.74);
-            -moz-box-shadow: -10px 10px 27px -3px rgba(0,0,0,0.74);
-        }
-
-            .tarjeta .titulo-tarjeta {
-                color: var(--colorPalabras);
-                margin-bottom: 10px;
-                font-size: 1.5em;
-            }
-
-            .tarjeta p {
-                color: var(--colorPalabras);
-                font-weight: 600;
-                font-size: 1em;
-                padding-top: 20px;
-            }
-
-            .tarjeta li {
-                padding-top: 20px;
-                font-size: 1em;
-            }
-
-    /* Estilos para el formulario de pago */
-    .formulario-pago {
-        display: none; /* Oculto por defecto */
-        background-color: var(--colorBackground);
-        border: 2px solid var(--colorPincipal);
-        border-radius: 10px;
-        padding: 20px;
-        max-width: 400px;
-        margin: 20px auto 60px auto;
-        box-shadow: -10px 10px 27px -3px rgba(0,0,0,0.74);
-        -webkit-box-shadow: -10px 10px 27px -3px rgba(0,0,0,0.74);
-        -moz-box-shadow: -10px 10px 27px -3px rgba(0,0,0,0.74);
-    }
-
-    .formulario-pago h2 {
-        color: var(--colorPalabras);
-        margin-bottom: 15px;
-        font-size: 1.5em;
-    }
-
-    .formulario-pago .qr-donacion {
-        border-radius: 8%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        align-content: center;
-        width: 100%;
-        padding: 2%;
-    }
-
 }
