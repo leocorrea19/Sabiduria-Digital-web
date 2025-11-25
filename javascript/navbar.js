@@ -35,9 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginBtn = nav.querySelector('#loginBtn');
     const registerBtn = nav.querySelector('#registerBtn');
 
-    // Validación: si los botones no existen, salir silenciosamente
-    // Esto es normal en páginas que no tienen estos botones (ej: sesion.html)
-    if (!loginBtn || !registerBtn) {
+    // Validación: si el botón de login no existe, salir silenciosamente
+    if (!loginBtn) {
         return;
     }
 
@@ -52,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Ocultar botones de login y registro
         loginBtn.style.display = 'none';
-        registerBtn.style.display = 'none';
+        if (registerBtn) registerBtn.style.display = 'none';
 
         // Prevenir duplicación de botones si la página se recarga
         // Solo crear los botones si no existen ya
@@ -108,6 +107,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Mostrar botones de login y registro
         loginBtn.style.display = 'inline-block';
-        registerBtn.style.display = 'inline-block';
+        if (registerBtn) registerBtn.style.display = 'inline-block';
     }
 });

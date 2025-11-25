@@ -209,26 +209,43 @@ footer {
 }
 
 /* ! MAIN */
-.wrapper {
+main {
     display: flex;
     justify-content: center;
+    /* Centra horizontalmente */
     align-items: center;
+    /* Centra verticalmente */
+    width: 100%;
     min-height: 80vh;
+    /* Usa min-height para que crezca si el formulario es alto */
+    background-color: var(--colorBody);
+    /* Asegura que el fondo sea el color sólido */
+}
+
+.div-foto-fondo-pagina {
+    display: none;
+    /* Oculto en móvil */
 }
 
 .form-box {
     position: relative;
     display: flex;
-    align-items: center;
     justify-content: center;
-    align-content: center;
+    align-items: center;
     width: 90%;
-    height: 70%;
+    /* Ancho casi completo en móvil */
+    max-width: 500px;
+    /* Pero no más ancho que esto */
+    height: auto;
+    /* Altura automática según el contenido */
+    min-height: 600px;
+    /* Una altura mínima para que quepan los inputs */
+    background: transparent;
+    /* O un color de fondo si lo prefieres */
+    border-radius: 20px;
     overflow: hidden;
-    z-index: 2;
-    background-color: var(--colorPincipal);
-    border-radius: 40px;
-    /* padding: 20px; */
+    margin: 20px 0;
+    /* Un poco de margen arriba y abajo */
 }
 
 .login-container {
@@ -251,7 +268,7 @@ footer {
 }
 
 .top span {
-    color: var(--colorBackground);
+    color: var(--colorPalabras);
     font-size: 1em;
     padding: 10px 0;
     display: flex;
@@ -260,7 +277,7 @@ footer {
 
 .top span b {
     font-weight: 600;
-    color: var(--colorBackground);
+    color: var(--colorPalabras);
     margin-left: 5px;
     text-decoration: underline;
     cursor: pointer;
@@ -271,84 +288,12 @@ footer {
     text-align: center;
     align-content: center;
     padding: 10px 0 10px 0;
-    /* background-color: var(--colorBackground); */
     border-radius: 20px;
     margin-bottom: 10px;
     text-align: center;
-    color: var(--colorBackground);
+    color: var(--colorPalabras);
     font-weight: 600;
     cursor: context-menu;
-}
-
-.two-forms {
-    display: flex;
-    gap: 10px;
-}
-
-.input-field {
-    font-size: 1em;
-    background-color: rgba(41, 99, 144, 0.4);
-    color: var(--colorBackground);
-    height: 50px;
-    width: 80%;
-    margin: 10px 0 10px 15px;
-    padding: 0 10px 0 45px;
-    border: none;
-    border-radius: 30px;
-    outline: none;
-    transition: .2s ease;
-}
-
-::-webkit-input-placeholder {
-    color: var(--colorBackground);
-}
-
-.input-box i {
-    position: relative;
-    top: 0;
-    left: 3rem;
-    color: var(--colorBotones);
-}
-
-.submit {
-    font-size: 1.2em;
-    font-weight: 600;
-    color: var(--colorPalabras);
-    height: 45px;
-    width: 80%;
-    margin-left: 40px;
-    border: none;
-    border-radius: 30px;
-    background: var(--colorBackground);
-    cursor: pointer;
-    transition: .3s ease-in-out;
-}
-
-.two-col {
-    display: flex;
-    justify-content: space-between;
-    color: var(--colorBackground);
-    font-size: small;
-    font-weight: 600;
-    margin-top: 10px;
-    margin-left: 20px;
-}
-
-.two-col .one {
-    display: flex;
-    gap: 5px;
-}
-
-.contraseña label a {
-    text-decoration: underline;
-    color: var(--colorBackground);
-    margin-right: 15px;
-}
-
-.terminos label a {
-    text-decoration: underline;
-    color: var(--colorBackground);
-    margin-left: 15px;
 }
 
 
@@ -558,17 +503,6 @@ footer {
 
     /* ! ------------------------------------------------------------------- */
     /* ! ------------------------------------------------------------------- */
-    /* ! --------MENSAJE DE ERROR AL LLENAR MAL EL MAIL O CONTRASEÑA-------- */
-    /* ! ------------------------------------------------------------------- */
-    /* ! ------------------------------------------------------------------- */
-
-    /* css/sesion.css */
-
-
-
-
-    /* ! ------------------------------------------------------------------- */
-    /* ! ------------------------------------------------------------------- */
     /* ! ---------------------FONDO DE LA PAGINA---------------------------- */
     /* ! ------------------------------------------------------------------- */
     /* ! ------------------------------------------------------------------- */
@@ -576,11 +510,13 @@ footer {
     main {
         display: flex;
         align-items: center;
+        justify-content: flex-start;
         width: 100%;
         height: 50rem;
     }
 
     .div-foto-fondo-pagina {
+        display: block;
         width: 50%;
         height: 100%;
         background-image:
@@ -613,6 +549,7 @@ footer {
         overflow: hidden;
         /* <--- ¡CRUCIAL! Esto corta lo que se salga de la caja */
         margin: 5%;
+        max-width: 100%;
     }
 
     .login-container {
