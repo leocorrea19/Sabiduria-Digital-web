@@ -36,7 +36,7 @@ const app = express();
  * Puerto en el que correrá el servidor
  * @constant {number}
  */
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 /**
  * URI de conexión a MongoDB
