@@ -38,8 +38,5 @@ Si deseas contribuir, sigue estos pasos:
 2. Crea una rama con tu nueva funcionalidad o corrección de errores.
 3. Haz un pull request explicando los cambios.
 
-## 📜 Licencia
-Este proyecto está bajo la licencia MIT.
-
 ## 📬 Contacto
 Si tienes preguntas o sugerencias, puedes comunicarte conmigo via email o LinkedIn.
